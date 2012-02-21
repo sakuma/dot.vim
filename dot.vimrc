@@ -10,6 +10,8 @@ set backupdir=$HOME/.vim/backup
 "Vi互換をオフ
 set nocompatible
 "スワップファイル用のディレクトリ
+filetype off
+
 set directory=$HOME/.vim/swaps
 "タブの代わりに空白文字を挿入する
 set expandtab
@@ -59,3 +61,22 @@ endif
 " 読まれたく無いファイルには下記の設定を記述
 "let plugin_cmdex_disable = 1
 
+
+""""""""""""""""""""""""""""
+"" plugins - vundle
+
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+ 
+" vim-scripts リポジトリ
+" Bundle 'rails.vim'
+
+" github の任意のリポジトリ
+Bundle 'tpope/vim-rails'
+"git plugin
+Bundle 'tpope/vim-fugitive'
+ 
+" github 以外のリポジトリ
+Bundle 'git://git.wincent.com/command-t.git'
+ 
+filetype plugin indent on
