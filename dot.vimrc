@@ -79,6 +79,8 @@ endif
 
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
+
+Bundle 'ruby.vim'
  
 " Bundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
 Bundle 'tpope/vim-rails'
@@ -88,5 +90,6 @@ Bundle 'tpope/vim-fugitive'
  
 " github 以外のリポジトリ
 Bundle 'git://git.wincent.com/command-t.git'
- 
-filetype plugin indent on
+filetype on
+filetype indent on
+filetype plugin on
