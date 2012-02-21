@@ -64,15 +64,25 @@ endif
 
 """"""""""""""""""""""""""""
 "" plugins - vundle
+""
+"" 
+"""""""""""""""""""""""""""""""""""""""
+"" vim-scripts リポジトリ(例)
+" Bundle 'rails.vim'
+"
+"" github の任意のリポジトリ
+" Bundle 'tpope/vim-rails'
+" 
+"" github 以外のリポジトリ
+" Bundle 'git://git.wincent.com/command-t.git'
+"""""""""""""""""""""""""""""""""""""""
 
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
  
-" vim-scripts リポジトリ
-" Bundle 'rails.vim'
-
-" github の任意のリポジトリ
+" Bundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
 Bundle 'tpope/vim-rails'
+
 "git plugin
 Bundle 'tpope/vim-fugitive'
  
