@@ -15,16 +15,25 @@
 
 > git clone git@github.com:n-sakuma/dot.vim.git ~/.vim
 
+
+### submodule(vundle.git) の追加
+
+> git submodule init
+
+> git submodule update
+
+
 ## .vimrc のsymlink をセット
 
 > ln -s ~/.vim/dot.vimrc ~/.vimrc
 
+
 ## pluginのsetup
 ### vundle 
 
-vim を起動し
+vim (mvim) を起動し
 
 :BundleInstall
 
-を実行する。
+を実行して、Bundle で指定したvim script をインストールする
 
