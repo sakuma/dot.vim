@@ -3,31 +3,24 @@
 
 # セットアップ
 
-## clone
+## 事前準備
 
-### 事前準備
+もし、すでに .vimrc, ~/.vim がある場合、削除するかmvしてbackupをとっておく
 
-もし、すでに ~/.vim がある場合、削除するかmv してbackupをとっておく
+> rm .vimrc
 
 > rm -rf ~/.vim
 
-### リポジトリを取得
+## リポジトリを取得(clone)
 
 > git clone git@github.com:n-sakuma/dot.vim.git ~/.vim
 
-### .vimrc をセット
+## .vimrc のsymlink をセット
 
-> cp ~/.vim/dot.vimrc ~/.vimrc
+> ln -s ~/.vim/dot.vimrc ~/.vimrc
 
-### submodule をセット
-
-> git submolude init
-
-> git submodule update
-
-
-### plugin
-#### vundle 
+## pluginのsetup
+### vundle 
 
 vim を起動し
 
