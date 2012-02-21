@@ -88,8 +88,11 @@ Bundle 'tpope/vim-rails'
 "git plugin
 Bundle 'tpope/vim-fugitive'
  
-" github 以外のリポジトリ
 Bundle 'git://git.wincent.com/command-t.git'
+
+" Bundle 'project.vim'
+Bundle 'scrooloose/nerdtree'
+
 filetype on
 filetype indent on
 filetype plugin on
