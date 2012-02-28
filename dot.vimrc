@@ -77,8 +77,11 @@ endif
 " Bundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
 
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+" Vundle自体も管理する
+Bundle 'gmarik/vundle'
 
 Bundle 'ruby.vim'
  
