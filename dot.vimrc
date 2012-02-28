@@ -93,6 +93,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 " Bundle 'project.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
+Bundle 'Shougo/unite.vim'
 
 filetype on
 filetype indent on
