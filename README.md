@@ -1,9 +1,7 @@
-使い方
+# セットアップ
 ---------------
 
-# セットアップ
-
-## 事前準備
+# 事前準備
 
 もし、すでに .vimrc, ~/.vim がある場合、削除するかmvしてbackupをとっておく
 
@@ -11,29 +9,36 @@
 
 > rm -rf ~/.vim
 
-## リポジトリを取得(clone)
+# リポジトリを取得(clone)
 
 > git clone git@github.com:n-sakuma/dot.vim.git ~/.vim
 
-
-### submodule(vundle.git) の追加
-
-> git submodule init
-
-> git submodule update
-
-
-## .vimrc のsymlink をセット
+# .vimrc のsymlink をセット
 
 > ln -s ~/.vim/dot.vimrc ~/.vimrc
 
+# Plugin の設定 - vundle管理のplugin をインストール
 
-## pluginのsetup
-### vundle 
+> cd ~/.vim
 
-vim (mvim) を起動し
+> vim -u bundles.vim +BundleInstall +q
 
-:BundleInstall
 
-を実行して、Bundle で指定したvim script をインストールする
+## vundle メモ
+
+### インストール
+
+> :BundleInstall
+
+### 更新
+
+> :BundleInstall!
+
+### 検索
+
+> :BundleSearch
+
+### 一覧
+
+> :Bundles
 
