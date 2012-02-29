@@ -41,6 +41,8 @@ set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,]
 "検索をファイルの先頭へループしない
 "set nowrapscan
+" 常に開いているファイルと同じディレクトリをカレントディレクトリにする
+au BufEnter * execute ":lcd " . expand("%:p:h")
 
 
 colorscheme torte
