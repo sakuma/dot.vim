@@ -62,5 +62,5 @@ endif
 "let plugin_cmdex_disable = 1
 
 " vundle
-:source <sfile>:h/bundles.vim
+:source ~/.vim/bundles.vim
 
