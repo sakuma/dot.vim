@@ -21,14 +21,15 @@ Bundle 'gmarik/vundle'
 
 """ Ruby 関連
 Bundle 'ruby.vim'
- 
+Bundle 'tpope/vim-endwise'
+
 " Bundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
 Bundle 'tpope/vim-rails'
 
 """ git plugin
 Bundle 'tpope/vim-fugitive'
- 
-Bundle 'git://git.wincent.com/command-t.git'
+
+" Bundle 'git://git.wincent.com/command-t.git'
 
 " Bundle 'project.vim'
 Bundle 'scrooloose/nerdtree'
