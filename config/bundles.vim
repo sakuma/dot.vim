@@ -33,7 +33,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
-:source ~/.vim/neocomplcache.vim
+:source ~/.vim/config/neocomplcache.vim
 
 """ reference plugin
 Bundle 'thinca/vim-ref'
