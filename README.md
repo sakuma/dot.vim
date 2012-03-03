@@ -5,40 +5,31 @@
 
 もし、すでに .vimrc, ~/.vim がある場合、削除するかmvしてbackupをとっておく
 
-> rm .vimrc
-
-> rm -rf ~/.vim
+> rm -rf ~/.vim  もしくは mv ~/.vim{,.old}
 
 # リポジトリを取得(clone)
 
 > git clone git@github.com:n-sakuma/dot.vim.git ~/.vim
 
-# .vimrc のsymlink をセット
+# セットアップ
 
-> ln -s ~/.vim/dot.vimrc ~/.vimrc
+> ~/.vim/setup.sh
 
 # Plugin の設定 - vundle管理のplugin をインストール
 
-> cd ~/.vim
-
-> vim -u bundles.vim +BundleInstall +q
-
-
-## vundle メモ
-
-### インストール
+## インストール
 
 > :BundleInstall
 
-### 更新
+## 更新
 
 > :BundleInstall!
 
-### 検索
+## 検索
 
 > :BundleSearch
 
-### 一覧
+## 一覧
 
 > :Bundles
 

@@ -4,6 +4,10 @@ cat <<-EOS
 
 EOS
 
+if [ -x ~/.vimrc ]; then
+  rm ~/.vimrc
+fi
+
 cd ~/.vim
 vundle_files=$(ls vundle.git | wc -l)
 if [ $vundle_files = 0 ]; then
