@@ -5,9 +5,9 @@ cat <<-EOS
 EOS
 
 cd ~/.vim
-if [ ! -x ~/.vim/vundle.git ]; then
-  git submodule init
-  git submodule update
+vundle_files=$(ls vundle.git | wc -l)
+if [ $vundle_files = 0 ]; then
+  git submodule init && git submodule update
 else
   git submodule sync
 fi
