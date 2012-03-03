@@ -35,5 +35,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/neocomplcache'
+:source ~/.vim/neocomplcache.vim
 
 filetype plugin indent on
