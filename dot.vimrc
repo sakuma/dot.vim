@@ -44,6 +44,12 @@ set whichwrap=b,s,h,l,<,>,[,]
 " 常に開いているファイルと同じディレクトリをカレントディレクトリにする
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
+" vimgrepコマンドで検索したら、検索結果の一覧を自動で開く
+augroup grepopen
+  autocmd!
+  autocmd QuickFixCmdPost vimgrep cw
+augroup END
+
 
 colorscheme torte
 if has('gui_macvim')
