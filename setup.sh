@@ -4,12 +4,17 @@ cat <<-EOS
 
 EOS
 
-cd ~/.vim
-git submodule init
-git submodule update
+if [ ! -x ~/bin ]; then
+  mkdir ~/bin
+fi
 
+if [ ! -x ~/bin/refe ]; then
+  ln -s ~/.vim/bin/refe ~/bin/refe
+fi
 
-cp ~/.vim/dot.vimrc ~/.vimrc
+if [ ! -e ~/.vimrc ]; then
+  ln -s ~/.vim/dot.vimrc ~/.vimrc
+fi
 
 cat <<-EOS
 

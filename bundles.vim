@@ -38,4 +38,18 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
 :source ~/.vim/neocomplcache.vim
 
+""" reference plugin
+Bundle 'thinca/vim-ref'
+"""
+" Ruby 
+" document archive - http://doc.okkez.net/archives/
+"
+" $ cd /tmp
+" $ wget http://doc.okkez.net/archives/201107/ruby-refm-1.9.2-dynamic-20110729.tar.gz
+" $ tar xvzf ruby-refm-1.9.2-dynamic-20110729.tar.gz
+" $ mv ruby-refm-1.9.2-dynamic-20110729/* ~/.vim/docs/rubyrefm
+"
+""" 標準添付以外のソース
+" https://github.com/thinca/vim-ref/wiki/sources
+
 filetype plugin indent on
