@@ -4,6 +4,14 @@ cat <<-EOS
 
 EOS
 
+cd ~/.vim
+if [ ! -x ~/.vim/vundle.git ]; then
+  git submodule init
+  git submodule update
+else
+  git submodule sync
+fi
+
 if [ ! -x ~/bin ]; then
   mkdir ~/bin
 fi

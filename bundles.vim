@@ -13,11 +13,8 @@
 " Bundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-
-""" Vundle自体も管理する
-Bundle 'gmarik/vundle'
 
 """ Ruby 関連
 Bundle 'ruby.vim'
