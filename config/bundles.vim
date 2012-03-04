@@ -49,4 +49,7 @@ Bundle 'thinca/vim-ref'
 """ 標準添付以外のソース
 " https://github.com/thinca/vim-ref/wiki/sources
 
+" Bundle 'buftabs'
+Bundle 'bufexplorer.zip'
+
 filetype plugin indent on
