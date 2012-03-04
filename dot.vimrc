@@ -1,4 +1,7 @@
 syntax on
+
+:source ~/.vim/config/keymap.vim
+
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "バックアップファイルを作るディレクトリ
