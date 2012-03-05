@@ -22,6 +22,7 @@ Bundle 'tpope/vim-endwise'
 
 " Bundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
 Bundle 'tpope/vim-rails'
+source ~/.vim/config/vim-rails-conf.vim
 
 """ git plugin
 Bundle 'tpope/vim-fugitive'
