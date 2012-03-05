@@ -27,6 +27,14 @@ source ~/.vim/config/vim-rails-conf.vim
 """ git plugin
 Bundle 'tpope/vim-fugitive'
 
+""""" 検討
+"""
+""" svncommand.vim
+""" 
+""" http://www.vim.org/scripts/script.php?script_id=922
+""" 
+"""
+
 " Bundle 'git://git.wincent.com/command-t.git'
 
 " Bundle 'project.vim'
