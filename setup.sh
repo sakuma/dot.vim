@@ -21,11 +21,20 @@ if [ ! -x ~/bin ]; then
 fi
 
 if [ ! -x ~/bin/refe ]; then
-  ln -s ~/.vim/bin/refe ~/bin/refe
+  ln -fs ~/.vim/bin/refe ~/bin/refe
+fi
+
+if [ ! -x docs/rubyrefm ]; then
+  REFERENCE_FILE='ruby-refm-1.9.2-dynamic-20110729'
+  REFERENCE_ARCHIVE_FILE=$REFERENCE_FILE.tar.gz
+  cd /tmp && wget http://doc.okkez.net/archives/201107/$REFERENCE_ARCHIVE_FILE
+  cd /tmp && tar xvzf $REFERENCE_ARCHIVE_FILE
+  mv /tmp/$REFERENCE_FILE ~/.vim/docs/rubyrefm
+  rm /tmp/$REFERENCE_ARCHIVE_FILE
 fi
 
 if [ ! -e ~/.vimrc ]; then
-  ln -s ~/.vim/dot.vimrc ~/.vimrc
+  ln -fs ~/.vim/dot.vimrc ~/.vimrc
 fi
 
 cat <<-EOS
