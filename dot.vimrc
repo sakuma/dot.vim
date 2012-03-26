@@ -75,3 +75,6 @@ endif
 " vundle
 :source ~/.vim/config/bundles.vim
 
+" 文字コード関連設定
+:source ~/.vim/config/character.vim
+
