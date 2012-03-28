@@ -47,6 +47,11 @@ set whichwrap=b,s,h,l,<,>,[,]
 " 常に開いているファイルと同じディレクトリをカレントディレクトリにする
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
+" 保存時に行末の空白削除
+autocmd BufWritePre * :%s/\s\+$//ge
+" 保存時にtabをスペースに変換する
+autocmd BufWritePre * :%s/\t/ /ge
+
 " vimgrepコマンドで検索したら、検索結果の一覧を自動で開く
 augroup grepopen
   autocmd!
