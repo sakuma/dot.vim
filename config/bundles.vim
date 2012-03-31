@@ -67,5 +67,6 @@ Bundle 'Gundo'
 
 Bundle 'tpope/vim-surround'
 
+Bundle 'mattn/calendar-vim'
 
 filetype plugin indent on
