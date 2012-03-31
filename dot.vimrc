@@ -55,6 +55,11 @@ autocmd BufWritePre * :%s/\t/ /ge
 " 余計なVimエディタが起動しないようにする
 runtime macros/editexisting.vim
 
+" 文字のないところにもカーソルを移動できる
+" all   : all mode (normal, insert, ...)
+" block : only visual mode
+set virtualedit=all
+
 " 検索結果ハイライトを ESCキーの連打でリセットする
 :nnoremap <ESC><ESC> :nohlsearch<CR>
 
