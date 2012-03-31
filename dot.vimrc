@@ -55,6 +55,9 @@ autocmd BufWritePre * :%s/\t/ /ge
 " 余計なVimエディタが起動しないようにする
 runtime macros/editexisting.vim
 
+" 検索結果ハイライトを ESCキーの連打でリセットする
+:nnoremap <ESC><ESC> :nohlsearch<CR>
+
 " vimgrepコマンドで検索したら、検索結果の一覧を自動で開く
 augroup grepopen
   autocmd!
