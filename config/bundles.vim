@@ -61,4 +61,9 @@ Bundle 'thinca/vim-ref'
 " Bundle 'buftabs'
 Bundle 'bufexplorer.zip'
 
+""" ツリー形式でファイルの編集履歴を表示
+Bundle 'Gundo'
+:nnoremap <F5> :GundoToggle<CR>
+
+
 filetype plugin indent on
