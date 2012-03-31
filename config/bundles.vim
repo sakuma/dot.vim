@@ -65,5 +65,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'Gundo'
 :nnoremap <F5> :GundoToggle<CR>
 
+Bundle 'tpope/vim-surround'
+
 
 filetype plugin indent on
