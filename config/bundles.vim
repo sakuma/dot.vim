@@ -1,14 +1,14 @@
 """"""""""""""""""""""""""""
 "" plugins - vundle
 ""
-"" 
+""
 """""""""""""""""""""""""""""""""""""""
 "" vim-scripts リポジトリ(例)
 " Bundle 'rails.vim'
 "
 "" github の任意のリポジトリ
 " Bundle 'tpope/vim-rails'
-" 
+"
 "" github 以外のリポジトリ
 " Bundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
@@ -30,9 +30,9 @@ Bundle 'tpope/vim-fugitive'
 """"" 検討
 """
 """ svncommand.vim
-""" 
+"""
 """ http://www.vim.org/scripts/script.php?script_id=922
-""" 
+"""
 """
 
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -47,7 +47,7 @@ Bundle 'Shougo/neocomplcache'
 """ reference plugin
 Bundle 'thinca/vim-ref'
 """
-" Ruby 
+" Ruby
 " document archive - http://doc.okkez.net/archives/
 "
 " $ cd /tmp
