@@ -4,6 +4,8 @@ let mapleader = ','
 noremap ; :
 noremap : ;
 
+imap <C-@> <C-[>
+
 " CTRL-hjklでウィンドウ移動
 " nnoremap <C-j> ;<C-w>j
 " nnoremap <C-k> ;<C-w>k
