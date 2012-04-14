@@ -1,3 +1,15 @@
+" map:     キーシーケンスを展開したあと、さらに別のマップを適用しようする
+" noremap: 一度だけ展開
+"
+"   コマンド    | ノーマル | 挿入 | コマンドライン | ビジュアル |
+"  map/noremap  |    o     |  -   |       -        |     o      |
+" nmap/nnoremap |    o     |  -   |       -        |     -      |
+" imap/inoremap |    -     |  o   |       -        |     -      |
+" cmap/cnoremap |    -     |  -   |       o        |     -      |
+" vmap/vnoremap |    -     |  -   |       -        |     o      |
+" map!/noremap! |    -     |  o   |       o        |     -      |
+
+
 let mapleader = ','
 
 " ;でコマンド入力( ;と:を入れ替)
