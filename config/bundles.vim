@@ -77,4 +77,8 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
+Bundle 'Align'
+:let g:Align_xstrlen = 3  " for japanese string
+:let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
+
 filetype plugin indent on
