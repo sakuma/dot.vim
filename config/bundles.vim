@@ -40,7 +40,6 @@ Bundle 'tpope/vim-fugitive'
 " Bundle 'project.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
-Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
 :source ~/.vim/config/neocomplcache.vim
 
