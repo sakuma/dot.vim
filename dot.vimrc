@@ -69,6 +69,9 @@ augroup grepopen
   autocmd QuickFixCmdPost vimgrep cw
 augroup END
 
+set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
+set grepprg=grep\ -nh
+
 
 colorscheme torte
 if has('gui_macvim')
