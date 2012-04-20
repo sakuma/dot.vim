@@ -39,6 +39,9 @@ Bundle 'tpope/vim-fugitive'
 
 " Bundle 'project.vim'
 Bundle 'scrooloose/nerdtree'
+:nnoremap <F3> :NERDTreeToggle<CR>
+
+
 Bundle 'The-NERD-Commenter'
 Bundle 'Shougo/neocomplcache'
 :source ~/.vim/config/neocomplcache.vim
