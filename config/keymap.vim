@@ -1,3 +1,7 @@
+"""""""""""""""""""""""""""""""""""""""
+"
+" キーマップ定義ファイル
+"
 " map:     キーシーケンスを展開したあと、さらに別のマップを適用しようする
 " noremap: 一度だけ展開
 "
@@ -8,6 +12,12 @@
 " cmap/cnoremap |    -     |  -   |       o        |     -      |
 " vmap/vnoremap |    -     |  -   |       -        |     o      |
 " map!/noremap! |    -     |  o   |       o        |     -      |
+"
+"
+"""""""""""""""""""""""""""""""
+" 割り当て調査
+"   :verb[ose] map [割り当てキー]
+"
 
 
 let mapleader = ','
@@ -43,3 +53,8 @@ vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 参考)
+"   http://sites.google.com/site/vimdocja/map-html#key-mapping
+"
