@@ -53,6 +53,22 @@ vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 
+""""""""""""""""""
+" 行番号表示切り替え(相対表示)
+" (ver7.3 以降から対応)
+"
+if version >= 703
+  noremap  gg :<C-u>ToggleNumber<CR>
+  command! -nargs=0 ToggleNumber call ToggleNumberOption()
+
+  function! ToggleNumberOption()
+    if &number
+      set relativenumber
+    else
+      set number
+    endif
+  endfunction
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 参考)
