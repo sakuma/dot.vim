@@ -73,3 +73,14 @@ nnoremap <C-S-Tab> gT
 " 参考)
 "   http://sites.google.com/site/vimdocja/map-html#key-mapping
 "
+" <Space>
+" <UP>, <DOWN>, <LEFT>, <RIGHT>
+" Ctrl : C
+" Shift : S
+" Tab : Tab
+" Meta : M
+" Enter : <CR>
+"
+"
+
+
