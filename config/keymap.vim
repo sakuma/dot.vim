@@ -22,7 +22,13 @@
 
 let mapleader = ','
 
-" ;でコマンド入力( ;と:を入れ替)
+"vimrcをリローダブルにする
+" reload vimrc
+noremap <C-c><C-c> <C-c>
+noremap <C-x><C-x>e :edit $HOME/.vimrc<CR>
+noremap <C-x><C-x> :source $HOME/.vimrc<CR>
+
+" ノーマルモードで ;と:を入れ替え
 noremap ; :
 noremap : ;
 
@@ -67,6 +73,30 @@ vnoremap ' "zdi'<C-R>z'<ESC>
 nnoremap <C-Tab>   gt
 nnoremap <C-S-Tab> gT
 
+" コマンドラインでのキーバインドを Emacs スタイルにする
+" Ctrl+Aで行頭へ移動
+:cnoremap <C-A> <Home>
+" Ctrl+Bで一文字戻る
+:cnoremap <C-B> <Left>
+" Ctrl+Dでカーソルの下の文字を削除
+:cnoremap <C-D> <Del>
+" Ctrl+Eで行末へ移動
+:cnoremap <C-E> <End>
+" Ctrl+Fで一文字進む
+:cnoremap <C-F> <Right>
+" Ctrl+Nでコマンドライン履歴を一つ進む
+:cnoremap <C-N> <Down>
+" Ctrl+Pでコマンドライン履歴を一つ戻る
+:cnoremap <C-P> <Up>
+" Alt+Ctrl+Bで前の単語へ移動
+:cnoremap <C-M-B> <S-Left>
+" Alt+Ctrl+Fで次の単語へ移動
+:cnoremap <C-M-F> <S-Right>
+
+
+"ノーマルモード: Enterで一行挿入
+map <S-Enter> O<ESC>
+map <Enter> o<ESC>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
