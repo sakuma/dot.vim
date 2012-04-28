@@ -14,10 +14,7 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 set nohlsearch " 検索キーワードをハイライトしないように設定
 set cursorline " カーソルラインの強調表示を有効化
 
-" ステータスラインを表示
-set laststatus=2 " ステータスラインを常に表示
-"set statusline=%F%r%h%= " ステータスラインの内容
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [%04v:%04l\/%L(%p%%)]
+:source ~/.vim/config/statusline.vim
 
 :source ~/.vim/config/keymap.vim
 
