@@ -28,6 +28,16 @@ noremap : ;
 
 imap <C-@> <C-[>
 
+
+" 移動系: Emacs風
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-n> <Down>
+imap <C-p> <UP>
+imap <C-a> <home>
+imap <C-e> <end>
+
+
 " CTRL-hjklでウィンドウ移動
 " nnoremap <C-j> ;<C-w>j
 " nnoremap <C-k> ;<C-w>k
