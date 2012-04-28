@@ -104,5 +104,8 @@ Bundle 'Align'
 """" xml
 Bundle 'xmledit'
 
+"""" recent opened file
+Bundle 'mru.vim'
+
 
 filetype plugin indent on
