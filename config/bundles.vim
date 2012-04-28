@@ -40,7 +40,7 @@ Bundle 'tpope/vim-fugitive'
 " Bundle 'project.vim'
 Bundle 'scrooloose/nerdtree'
 :nnoremap <F3> :NERDTreeToggle<CR>
-
+let NERDTreeShowHidden = 1
 
 Bundle 'The-NERD-Commenter'
 Bundle 'Shougo/neocomplcache'
