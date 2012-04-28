@@ -101,5 +101,8 @@ Bundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
 :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
 
+"""" xml
+Bundle 'xmledit'
+
 
 filetype plugin indent on
