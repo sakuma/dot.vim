@@ -107,5 +107,9 @@ Bundle 'xmledit'
 """" recent opened file
 Bundle 'mru.vim'
 
+Bundle 'YankRing.vim'
+let g:yankring_max_history = 50
+noremap <C-S-p> :YRSearch<CR>
+"noremap <C-S-u> :YRShow<CR>
 
 filetype plugin indent on
