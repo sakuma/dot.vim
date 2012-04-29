@@ -43,7 +43,11 @@ Bundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden = 1
 
 Bundle 'The-NERD-Commenter'
-Bundle 'Shougo/neocomplcache'
+
+if version >= 702
+  Bundle 'Shougo/neocomplcache'
+endif
+
 :source ~/.vim/config/neocomplcache.vim
 
 """ reference plugin
@@ -80,8 +84,10 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 
-Bundle 'Shougo/unite.vim'
-:source ~/.vim/config/unite.vim
+if version >= 702
+  Bundle 'Shougo/unite.vim'
+  :source ~/.vim/config/unite.vim
+endif
 
 Bundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
