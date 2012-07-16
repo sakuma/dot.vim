@@ -15,12 +15,15 @@
 
 > ~/.vim/setup.sh
 
-# Plugin の設定 - vundle管理のplugin をインストール
+# Plugin の設定 - NeoBundle管理のplugin をインストール
 
 ## インストール
 
 > :NeoBundleInstall
 
+## 更新
+
+> :NeoBundleUpdate
 
 ## 一覧
 
