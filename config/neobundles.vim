@@ -116,5 +116,8 @@ NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
 NeoBundle 'csv.vim'
 
+NeoBundle 'Shougo/vimproc.git'
+NeoBundle 'Shougo/vimshell.git'
+
 filetype plugin indent on
 
