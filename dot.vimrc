@@ -46,9 +46,8 @@ endif
 "set clipboard=unnamed
 
 set nocompatible "Vi互換をオフ
-"スワップファイル用のディレクトリ
 filetype off
-set directory=$HOME/.vim/swaps
+set directory=$HOME/.vim/swaps " スワップファイル用のディレクトリ
 
 set expandtab "タブの代わりに空白文字を挿入する
 set hidden "変更中のファイルでも、保存しないで他のファイルを表示
@@ -128,7 +127,9 @@ endif
 "let plugin_cmdex_disable = 1
 
 " vundle
-:source ~/.vim/config/bundles.vim
+":source ~/.vim/config/bundles.vim
+" neobundle
+:source ~/.vim/config/neobundles.vim
 
 " 文字コード関連設定
 :source ~/.vim/config/character.vim

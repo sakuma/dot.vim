@@ -1,31 +1,39 @@
 """"""""""""""""""""""""""""
-"" plugins - vundle
+"" plugins - neobundle
 ""
 ""
 """""""""""""""""""""""""""""""""""""""
 "" vim-scripts リポジトリ(例)
-" Bundle 'rails.vim'
+" NeoBundle 'rails.vim'
 "
 "" github の任意のリポジトリ
-" Bundle 'tpope/vim-rails'
+" NeoBundle 'tpope/vim-rails'
 "
 "" github 以外のリポジトリ
-" Bundle 'git://git.wincent.com/command-t.git'
+" NeoBundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
 
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+set nocompatible "Vi互換をオフ
+filetype off
+filetype plugin indent off
+
+set rtp+=~/.vim/neobundle.git/
+if has('vim_starting')
+  set runtimepath+=~/.vim/neobundle.vim
+  call neobundle#rc(expand('~/.bundle'))
+endif
+
 
 """ Ruby 関連
-Bundle 'ruby.vim'
-Bundle 'tpope/vim-endwise'
+NeoBundle 'ruby.vim'
+NeoBundle 'tpope/vim-endwise'
 
-" Bundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
-Bundle 'tpope/vim-rails'
+" NeoBundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
+NeoBundle 'tpope/vim-rails'
 source ~/.vim/config/vim-rails-conf.vim
 
 """ git plugin
-Bundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 
 """"" 検討
 """
@@ -35,23 +43,23 @@ Bundle 'tpope/vim-fugitive'
 """
 """
 
-" Bundle 'git://git.wincent.com/command-t.git'
+" NeoBundle 'git://git.wincent.com/command-t.git'
 
-" Bundle 'project.vim'
-Bundle 'scrooloose/nerdtree'
+" NeoBundle 'project.vim'
+NeoBundle 'scrooloose/nerdtree'
 :nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
-Bundle 'The-NERD-Commenter'
+NeoBundle 'The-NERD-Commenter'
 
 if version >= 702
-  Bundle 'Shougo/neocomplcache'
+  NeoBundle 'Shougo/neocomplcache'
 endif
 
 :source ~/.vim/config/neocomplcache.vim
 
 """ reference plugin
-Bundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-ref'
 """
 " Ruby
 " document archive - http://doc.okkez.net/archives/
@@ -64,44 +72,45 @@ Bundle 'thinca/vim-ref'
 """ 標準添付以外のソース
 " https://github.com/thinca/vim-ref/wiki/sources
 
-" Bundle 'buftabs'
-Bundle 'bufexplorer.zip'
+" NeoBundle 'buftabs'
+NeoBundle 'bufexplorer.zip'
 
 """ ツリー形式でファイルの編集履歴を表示
-Bundle 'Gundo'
+NeoBundle 'Gundo'
 :nnoremap <F5> :GundoToggle<CR>
 
-Bundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 
-Bundle 'mattn/calendar-vim'
+NeoBundle 'mattn/calendar-vim'
 
 " open browser
 "   more ... :help open-browser
 "
-Bundle 'tyru/open-browser.vim'
+NeoBundle 'tyru/open-browser.vim'
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 
 if version >= 702
-  Bundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/unite.vim'
   :source ~/.vim/config/unite.vim
 endif
 
-Bundle 'Align'
+NeoBundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
 :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
 
 """" xml
-Bundle 'xmledit'
+NeoBundle 'xmledit'
 
 """" recent opened file
-Bundle 'mru.vim'
+NeoBundle 'mru.vim'
 
-Bundle 'YankRing.vim'
+NeoBundle 'YankRing.vim'
 let g:yankring_max_history = 50
 noremap <C-S-p> :YRSearch<CR>
 "noremap <C-S-u> :YRShow<CR>
 
 filetype plugin indent on
+
