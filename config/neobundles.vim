@@ -50,7 +50,7 @@ NeoBundle 'scrooloose/nerdtree'
 :nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
-NeoBundle 'The-NERD-Commenter'
+NeoBundle 'tomtom/tcomment_vim'
 
 if version >= 702
   NeoBundle 'Shougo/neocomplcache'
