@@ -11,7 +11,8 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 "highlight Normal ctermbg=grey ctermfg=black
 "highlight StatusLine term=none cterm=none ctermfg=grey ctermbg=black
 "highlight CursorLine term=none cterm=none ctermfg=darkgray ctermbg=none
-set nohlsearch " 検索キーワードをハイライトしないように設定
+"set nohlsearch " 検索キーワードをハイライトしないように設定
+set hlsearch " 検索キーワードのハイライト
 set cursorline " カーソルラインの強調表示を有効化
 set ignorecase " 検索時に大文字小文字を区別しない
 
