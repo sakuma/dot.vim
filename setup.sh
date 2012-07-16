@@ -9,8 +9,8 @@ if [ -x ~/.vimrc ]; then
 fi
 
 cd ~/.vim
-vundle_files=$(ls vundle.git | wc -l)
-if [ $vundle_files = 0 ]; then
+neobundle=$(ls neobundle.git | wc -l)
+if [ $neobundle = 0 ]; then
   git submodule init && git submodule update
 else
   git submodule sync
