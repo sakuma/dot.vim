@@ -115,9 +115,9 @@ noremap <C-S-p> :YRSearch<CR>
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
 NeoBundle 'csv.vim'
-
 NeoBundle 'Shougo/vimproc.git'
 NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/vimfiler.git'
 
 filetype plugin indent on
 
