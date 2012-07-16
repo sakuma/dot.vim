@@ -22,7 +22,7 @@ set ignorecase " 検索時に大文字小文字を区別しない
 
 set backupdir=$HOME/.vim/backup "バックアップファイルを作るディレクトリ
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-"set browsedir=buffer
+set browsedir=buffer
 
 """"""""""""""""""
 " 行番号
