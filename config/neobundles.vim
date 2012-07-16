@@ -112,5 +112,7 @@ let g:yankring_max_history = 50
 noremap <C-S-p> :YRSearch<CR>
 "noremap <C-S-u> :YRShow<CR>
 
+NeoBundle 'thinca/vim-fontzoom'
+
 filetype plugin indent on
 
