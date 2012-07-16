@@ -20,7 +20,7 @@ filetype plugin indent off
 set rtp+=~/.vim/neobundle.git/
 if has('vim_starting')
   set runtimepath+=~/.vim/neobundle.vim
-  call neobundle#rc(expand('~/.bundle'))
+  call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
 
