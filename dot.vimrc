@@ -13,6 +13,7 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 "highlight CursorLine term=none cterm=none ctermfg=darkgray ctermbg=none
 set nohlsearch " 検索キーワードをハイライトしないように設定
 set cursorline " カーソルラインの強調表示を有効化
+set ignorecase " 検索時に大文字小文字を区別しない
 
 :source ~/.vim/config/statusline.vim
 
