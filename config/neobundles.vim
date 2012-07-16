@@ -114,6 +114,7 @@ noremap <C-S-p> :YRSearch<CR>
 
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
+NeoBundle 'csv.vim'
 
 filetype plugin indent on
 
