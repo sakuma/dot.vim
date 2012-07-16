@@ -19,17 +19,10 @@
 
 ## インストール
 
-> :BundleInstall
+> :NeoBundleInstall
 
-## 更新
-
-> :BundleInstall!
-
-## 検索
-
-> :BundleSearch
 
 ## 一覧
 
-> :Bundles
+> :NeoBundleList
 
