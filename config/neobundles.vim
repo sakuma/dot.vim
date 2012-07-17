@@ -34,6 +34,7 @@ source ~/.vim/config/vim-rails-conf.vim
 
 """ git plugin
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'int3/vim-extradite.git'
 
 """"" 検討
 """
