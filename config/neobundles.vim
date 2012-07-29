@@ -30,7 +30,7 @@ NeoBundle 'tpope/vim-endwise'
 
 " NeoBundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
 NeoBundle 'tpope/vim-rails'
-source ~/.vim/config/vim-rails-conf.vim
+source ~/.vim/config/ruby.vim
 
 """ git plugin
 NeoBundle 'tpope/vim-fugitive'
