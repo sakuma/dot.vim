@@ -42,6 +42,7 @@ if [ ! -x ~/.vim/docs/rubyrefm ]; then
   REFERENCE_ARCHIVE_FILE=$REFERENCE_FILE.tar.gz
   cd /tmp && wget http://doc.okkez.net/archives/201107/$REFERENCE_ARCHIVE_FILE
   cd /tmp && tar xvzf $REFERENCE_ARCHIVE_FILE
+  mkdir -p ~/.vim/docs/rubyrefm
   mv /tmp/$REFERENCE_FILE ~/.vim/docs/rubyrefm
   rm /tmp/$REFERENCE_ARCHIVE_FILE
 fi
