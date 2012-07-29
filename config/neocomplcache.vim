@@ -64,13 +64,27 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+" autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'']'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+setlocal omnifunc=syntaxcomplete#Complete
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \ if &omnifunc == "" |
+        \  setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
+endif
