@@ -120,5 +120,7 @@ NeoBundle 'Shougo/vimproc.git'
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
 
+NeoBundle 'thinca/vim-quickrun'
+
 filetype plugin indent on
 
