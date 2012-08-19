@@ -42,8 +42,8 @@ if version >= 703
   endfunction
 endif
 
-"クリップボードをWindowsと連携
-"set clipboard=unnamed
+"クリップボードを連携
+set clipboard=unnamed
 
 set nocompatible "Vi互換をオフ
 filetype off
