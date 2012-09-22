@@ -23,6 +23,10 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
+if version >= 702
+  NeoBundle 'Shougo/unite.vim'
+  :source ~/.vim/config/unite.vim
+endif
 
 """ Ruby 関連
 NeoBundle 'ruby.vim'
@@ -33,6 +37,8 @@ NeoBundle 'ruby-matchit'
 NeoBundle 'tpope/vim-rails'
 " NeoBundle 'taichouchou2/vim-rails'　　
 NeoBundle 'romanvbabenko/rails.vim'
+NeoBundle 'ujihisa/unite-rake'
+NeoBundle 'basyura/unite-rails'
 source ~/.vim/config/ruby.vim
 
 """ git plugin
@@ -95,11 +101,6 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-
-if version >= 702
-  NeoBundle 'Shougo/unite.vim'
-  :source ~/.vim/config/unite.vim
-endif
 
 NeoBundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
