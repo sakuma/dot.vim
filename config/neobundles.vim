@@ -53,7 +53,6 @@ NeoBundle 'int3/vim-extradite.git'
 """
 """
 
-" NeoBundle 'git://git.wincent.com/command-t.git'
 
 " NeoBundle 'project.vim'
 NeoBundle 'scrooloose/nerdtree'
@@ -121,10 +120,16 @@ NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
 NeoBundle 'csv.vim'
 NeoBundle 'Shougo/vimproc.git'
+
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
 
 NeoBundle 'thinca/vim-quickrun'
+
+"" grepの拡張
+NeoBundle 'fuenor/qfixgrep'
+set runtimepath+=~/.vim/bundle/qfixgrep
+" set runtimepath+=~/.vim/libs/qfixapp
 
 filetype plugin indent on
 
