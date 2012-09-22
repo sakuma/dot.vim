@@ -69,7 +69,7 @@ vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 vnoremap - "zdi<% <C-R>z -%><ESC>
-vnoremap = "zdi<%= <C-R>z %><ESC>
+vnoremap % "zdi<%= <C-R>z %><ESC>
 
 " ctrl+tab, ctrl+shift+tab でタブ切り替え
 nnoremap <C-Tab>   gt
