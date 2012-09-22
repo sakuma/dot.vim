@@ -27,9 +27,12 @@ endif
 """ Ruby 関連
 NeoBundle 'ruby.vim'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'ruby-matchit'
 
-" NeoBundle 'rails.vim' "autoload でエラーがでるため、下記のbundleを使う
+" Railsサポート
 NeoBundle 'tpope/vim-rails'
+" NeoBundle 'taichouchou2/vim-rails'　　
+NeoBundle 'romanvbabenko/rails.vim'
 source ~/.vim/config/ruby.vim
 
 """ git plugin
