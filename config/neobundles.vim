@@ -39,8 +39,8 @@ NeoBundle 'ruby-matchit'
 
 " Railsサポート
 NeoBundle 'tpope/vim-rails'
-" NeoBundle 'taichouchou2/vim-rails'　　
-NeoBundle 'romanvbabenko/rails.vim'
+" NeoBundle 'taichouchou2/vim-rails'
+" NeoBundle 'romanvbabenko/rails.vim'
 NeoBundle 'ujihisa/unite-rake'
 NeoBundle 'basyura/unite-rails'
 source ~/.vim/config/ruby.vim
@@ -108,6 +108,17 @@ vmap gx <Plug>(openbrowser-smart-search)
 NeoBundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
 :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
+
+NeoBundle 'Lokaltog/vim-powerline'
+" let g:Powerline_theme = 'skwp'
+let g:Powerline_colorscheme = 'skwp'
+let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
+let g:Powerline_stl_path_style = 'full'
+let g:Powerline_cache_enabled = 0
+let g:Powerline_mode_n = ' N '
+" let g:Powerline_mode_i = 'Insert'
+" set guifont=Ricty_for_Powerline:h16
+" set guifontwide=Ricty:h16
 
 """" xml
 NeoBundle 'xmledit'
