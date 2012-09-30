@@ -131,5 +131,10 @@ NeoBundle 'fuenor/qfixgrep'
 set runtimepath+=~/.vim/bundle/qfixgrep
 " set runtimepath+=~/.vim/libs/qfixapp
 
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
+NeoBundle 'kchmck/vim-coffee-script'
+
 filetype plugin indent on
 
