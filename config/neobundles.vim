@@ -1,7 +1,12 @@
 """"""""""""""""""""""""""""
 "" plugins - neobundle
-""
-""
+"
+" Brief help
+"   :NeoBundleList          - list configured bundles
+"   :NeoBundleInstall(!)    - install(update) bundles
+"   :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+"
 """""""""""""""""""""""""""""""""""""""
 "" vim-scripts リポジトリ(例)
 " NeoBundle 'rails.vim'
@@ -15,13 +20,12 @@
 
 set nocompatible "Vi互換をオフ
 filetype off
-filetype plugin indent off
 
-set rtp+=~/.vim/neobundle.git/
 if has('vim_starting')
   set runtimepath+=~/.vim/neobundle.vim
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
+
 
 if version >= 702
   NeoBundle 'Shougo/unite.vim'
@@ -138,3 +142,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
 
+" Installation check.
+" if neobundle#exists_not_installed_bundles()
+"   echomsg 'Not installed bundles : ' .
+"         \ string(neobundle#get_not_installed_bundle_names())
+"   echomsg 'Please execute ":NeoBundleInstall" command.'
+" endif

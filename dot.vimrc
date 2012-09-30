@@ -45,8 +45,6 @@ endif
 "クリップボードを連携
 set clipboard=unnamed
 
-set nocompatible "Vi互換をオフ
-filetype off
 set directory=$HOME/.vim/swaps " スワップファイル用のディレクトリ
 
 set expandtab "タブの代わりに空白文字を挿入する
