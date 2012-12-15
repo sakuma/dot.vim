@@ -110,8 +110,10 @@ NeoBundle 'Align'
 :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
 
 NeoBundle 'Lokaltog/vim-powerline'
+
 " let g:Powerline_theme = 'skwp'
-let g:Powerline_colorscheme = 'skwp'
+" let g:Powerline_theme = 'solarized256'
+" let g:Powerline_colorscheme = 'skwp'
 let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
 let g:Powerline_stl_path_style = 'full'
 let g:Powerline_cache_enabled = 0
