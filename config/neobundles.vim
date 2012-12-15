@@ -143,8 +143,7 @@ NeoBundle 'thinca/vim-quickrun'
 
 "" grepの拡張
 NeoBundle 'fuenor/qfixgrep'
-set runtimepath+=~/.vim/bundle/qfixgrep
-" set runtimepath+=~/.vim/libs/qfixapp
+"" 設定: config/ffixhown-config.vim
 
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
