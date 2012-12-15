@@ -264,6 +264,7 @@ function! QFixMemoCalendar(dircmd, file, cnt, ...)
   setlocal nolist
   setlocal nowrap
   setlocal nonumber
+  setlocal norelativenumber
   setlocal nomodifiable
   let &winfixheight = g:submenu_calendar_winfixheight
   let &winfixwidth  = g:submenu_calendar_winfixwidth
@@ -559,14 +560,6 @@ function! s:CalendarInfo(day, month, year)
   let month = a:month
   let year  = a:year
 
-  if day == 24 && month == 12
-    return [' Merry Xmas!']
-  elseif day == 31 && month == 10
-    return [' Trick or Treat?']
-  elseif day == 1 && month == 1
-    return [' Happy New Year!']
-  endif
-
   let file = expand(QFixMemoCalendarFile(year, month, day))
   if filereadable(file)
     let info = readfile(file, '', 1)
@@ -574,6 +567,14 @@ function! s:CalendarInfo(day, month, year)
       call map(info, "iconv(v:val, g:qfixmemo_fileencoding, &enc)")
     endif
     return info
+  endif
+
+  if day == 24 && month == 12
+    return [' Merry Xmas!']
+  elseif day == 31 && month == 10
+    return [' Trick or Treat?']
+  elseif day == 1 && month == 1
+    return [' Happy New Year!']
   endif
 
   return []
@@ -590,6 +591,8 @@ if !exists('g:calendar_month')
   let g:calendar_month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   if g:calendar_jp == 2
     let g:calendar_month = ['睦月  ', '如月  ', '弥生  ', '卯月  ', '皐月  ', '水無月', '文月  ', '葉月  ', '長月  ', '神無月', '霜月  ', '師走  ']
+  elseif g:calendar_jp == 3
+    let g:calendar_month = ['睦月  ', '如月  ', '弥生  ', '卯月  ', '皐月  ', '水無月', '文月  ', '葉月  ', '長月  ', '神在月', '霜月  ', '師走  ']
   endif
 endif
 function! s:CalendarStr(row, col)

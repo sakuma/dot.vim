@@ -5,7 +5,7 @@
 "                   http://sites.google.com/site/fudist/Home/grep
 "         Author: fuenor <fuenor@gmail.com>
 "=============================================================================
-let s:version = 288
+let s:version = 289
 scriptencoding utf-8
 
 " What Is This:
@@ -803,7 +803,7 @@ endfunction
 "         Author: fuenor <fuenor@gmail.com>
 "                 http://sites.google.com/site/fudist/Home/grep
 "================================================================================
-let s:MSWindows = has('win95') + has('win16') + has('win32') + has('win64')
+let s:MSWindows = has('win95') || has('win16') || has('win32') || has('win64')
 
 " 使用するgrep指定
 if !exists('g:mygrepprg')
@@ -815,17 +815,6 @@ if !exists('g:mygrepprg')
     let g:mygrepprg = 'grep'
   endif
 endif
-" 日本語が含まれる場合のgrep指定
-if !exists('myjpgrepprg')
-  let myjpgrepprg = ''
-endif
-" grepを実行する際に$LANGも設定する
-if !exists('g:MyGrep_LANG')
-  let g:MyGrep_LANG = ''
-  if s:MSWindows && exists('$LANG') && $LANG=~ 'ja'
-    let MyGrep_LANG = 'ja_JP.SJIS'
-  endif
-endif
 " let mygrepprg=findstr, let mygrepprg=grepで切り替え可能に
 if !exists('g:grep') && exists('g:mygrepprg')
   let g:grep = g:mygrepprg
@@ -833,6 +822,39 @@ endif
 if !exists('g:findstr')
   let g:findstr = 'findstr'
 endif
+
+" 日本語が含まれる場合のgrep指定
+if !exists('g:myjpgrepprg')
+  let myjpgrepprg = ''
+endif
+
+" Windowsから cygwin 1.7以降のgrep.exeを使用する場合に
+" UTF-8の一部文字が検索不可能な問題に対する対処
+" cygwin 1.5のgrep.exe等他のgrepを使用する場合は必ず 0
+" findstrには影響しない
+if !exists('g:MyGrep_cygwin17')
+  let g:MyGrep_cygwin17 = 0
+endif
+" cygwin上で動作している場合は不要
+if has('win32unix')
+  let g:MyGrep_cygwin17 = 0
+endif
+" UTF-8文字列はコードページを変更してgrep(Windows)
+if !exists('g:MyGrep_chcp')
+  let g:MyGrep_chcp = 0
+endif
+" grepを実行する際に$LANGも設定する
+if !exists('g:MyGrep_LANG')
+  let g:MyGrep_LANG = ''
+  if exists('$LANG') && $LANG=~ 'ja' && s:MSWindows && !has('win32unix')
+    let g:MyGrep_LANG = 'ja_JP.SJIS'
+  endif
+endif
+" cygwin 1.7以降のエラーメッセージ抑制
+if !exists('$CYGWIN') && s:MSWindows
+  let $CYGWIN = 'nodosfilewarning'
+endif
+
 " 検索対象外のファイル指定
 if !exists('g:MyGrep_ExcludeReg')
   let g:MyGrep_ExcludeReg = '[~#]$\|\.dll$\|\.exe$\|\.lnk$\|\.o$\|\.obj$\|\.pdf$\|\.xls$'
@@ -840,7 +862,7 @@ endif
 " 使用するgrepのエンコーディング指定
 if !exists('g:MyGrep_ShellEncoding')
   let g:MyGrep_ShellEncoding = 'utf-8'
-  if s:MSWindows
+  if s:MSWindows && !has('win32unix')
     let g:MyGrep_ShellEncoding = 'cp932'
   endif
 endif
@@ -892,6 +914,10 @@ if !exists('g:MyGrep_errorformat')
   " let g:MyGrep_errorformat = '%f|%\\s%#%l|%m'
 endif
 
+" エラーメッセージ表示
+if !exists('g:MyGrep_error')
+  let g:MyGrep_error = 0
+endif
 " QFixHowm用の行儀の悪いオプション
 let g:MyGrep_FileListWipeTime = 0
 let g:MyGrep_qflist = []
@@ -912,16 +938,16 @@ if !exists('g:MyGrepcmd_useropt')
   let g:MyGrepcmd_useropt = ''
 endif
 if !exists('g:MyGrepcmd_regexp')
-  let g:MyGrepcmd_regexp = '-nHIE'
+  let g:MyGrepcmd_regexp = '-n -H -I -E'
 endif
 if !exists('g:MyGrepcmd_regexp_ignore')
-  let g:MyGrepcmd_regexp_ignore = '-nHIEi'
+  let g:MyGrepcmd_regexp_ignore = '-n -H -I -E -i'
 endif
 if !exists('g:MyGrepcmd_fix')
-  let g:MyGrepcmd_fix = '-nHIF'
+  let g:MyGrepcmd_fix = '-n -H -I -F'
 endif
 if !exists('g:MyGrepcmd_fix_ignore')
-  let g:MyGrepcmd_fix_ignore = '-nHIFi'
+  let g:MyGrepcmd_fix_ignore = '-n -H -I -F -i'
 endif
 if !exists('g:MyGrepcmd_recursive')
   let g:MyGrepcmd_recursive = '-R'
@@ -951,6 +977,8 @@ endif
 let g:MyGrep_UseVimgrep = 0
 " " QuickFixに登録しない
 " let g:MyGrep_Return = 0
+
+let g:MyGrep_retval = ''
 
 """"""""""""""""""""""""""""""
 " 汎用Grep関数
@@ -1054,7 +1082,7 @@ function! s:MyGrep(pattern, searchPath, filepattern, fenc, addflag, ...)
       let g:MyGrep_Damemoji = 0
     endif
   endif
-  call s:SetGrepEnv('set', pattern)
+  call s:SetGrepEnv('set', pattern, a:fenc)
   let _grepcmd = 'g:MyGrepcmd_regexp'
   if g:MyGrep_Regexp == 0
     let _grepcmd = 'g:MyGrepcmd_fix'
@@ -1096,6 +1124,15 @@ function! s:MyGrep(pattern, searchPath, filepattern, fenc, addflag, ...)
   let file = ''
   redraw|echo 'QFixGrep : Parsing...'
   let g:MyGrep_qflist = s:ParseSearchResult(searchPath, retval, pattern, g:MyGrep_ShellEncoding, a:fenc)
+  if g:MyGrep_error && g:MyGrep_qflist == [] && g:MyGrep_retval != ''
+    echoe 'qfixlist : ' g:MyGrep_execmd
+    let from_encoding = g:MyGrep_ShellEncoding
+    let to_encoding = &enc
+    for mes in split(iconv(retval, from_encoding, to_encoding), '\n')
+      echoe mes
+    endfor
+    let choice = confirm('An error has occurred.', "&OK", 1, "E")
+  endif
   call s:SetGrepEnv('restore')
   " if g:MyGrep_Return
   "   let g:MyGrep_Return = 0
@@ -1130,7 +1167,7 @@ if !exists('g:qfixtempname')
   let g:qfixtempname = tempname()
 endif
 """"""""""""""""""""""""""""""
-" 非grep互換コマンド環境設定
+" grep環境設定
 """"""""""""""""""""""""""""""
 function! s:SetGrepEnv(mode, ...)
   if a:mode == 'set'
@@ -1141,6 +1178,21 @@ function! s:SetGrepEnv(mode, ...)
     endif
   endif
   if g:mygrepprg != 'findstr' && g:mygrepprg !~ 'jvgrep'
+    if !s:MSWindows || g:MyGrep_LANG == '' || g:MyGrep_cygwin17 + g:MyGrep_chcp == 0
+      return
+    endif
+    if a:mode == 'set'
+      " コードページをUTF-8に変更してgrepする
+      let s:MyGrep_LANG          = g:MyGrep_LANG
+      let s:MyGrep_ShellEncoding = g:MyGrep_ShellEncoding
+      if a:2 == 'utf-8'
+        let g:MyGrep_LANG          = 'ja_JP.UTF-8'
+        let g:MyGrep_ShellEncoding = 'utf-8'
+      endif
+    elseif a:mode == 'restore'
+      let g:MyGrep_LANG          = s:MyGrep_LANG
+      let g:MyGrep_ShellEncoding = s:MyGrep_ShellEncoding
+    endif
     return
   endif
   if a:mode == 'set'
@@ -1173,6 +1225,7 @@ function! s:SetGrepEnv(mode, ...)
       let g:MyGrepcmd_fix_ignore      = '-i -F'
       let g:MyGrepcmd_recursive       = '-R'
       let g:MyGrep_Damemoji           = 0
+      let g:MyGrep_FileEncoding       = g:MyGrep_ShellEncoding
     endif
   elseif a:mode == 'restore'
     if s:mygrepprg != ''
@@ -1260,6 +1313,10 @@ function! s:ExecGrep(cmd, prg, searchPath, searchWord, from_encoding, to_encodin
   " 検索語ファイル作成
   if match(cmd, '#searchWordFile#') != -1
     let searchWord = iconv(a:searchWord, a:from_encoding, a:to_encoding)
+    if g:mygrepprg =~ 'jvgrep'
+      let to_encoding = 'utf-8'
+      let searchWord = iconv(a:searchWord, a:from_encoding, to_encoding)
+    endif
     let searchWordList = [searchWord]
     call writefile(searchWordList, g:qfixtempname, 'b')
     let cmd = substitute(cmd, '#searchWordFile#', s:GrepEscapeVimPattern(g:qfixtempname), 'g')
@@ -1267,11 +1324,6 @@ function! s:ExecGrep(cmd, prg, searchPath, searchWord, from_encoding, to_encodin
   if match(cmd, '#searchWord#') != -1
     let to_encoding = g:MyGrep_ShellEncoding
     let searchWord = iconv(a:searchWord, a:from_encoding, to_encoding)
-    if g:mygrepprg =~ 'jvgrep'
-      if match(searchWord, ' ')
-        let searchWord = '"' . searchWord . '"'
-      endif
-    endif
     let cmd = substitute(cmd, '#searchWord#', s:GrepEscapeVimPattern(searchWord), 'g')
   endif
 
@@ -1293,13 +1345,22 @@ function! s:ExecGrep(cmd, prg, searchPath, searchWord, from_encoding, to_encodin
   if g:MyGrep_LANG != ''
     let $LANG = saved_LANG
   endif
+  if exists('$CYGWIN') && s:MSWindows
+    let saved_CYGWIN = $CYGWIN
+    let $CYGWIN = 'nodosfilewarning'
+  endif
+
   let g:MyGrep_path   = a:searchPath
+  let g:MyGrep_execmd = cmd
   if s:debug
     let g:fudist_cmd = cmd
     let g:fudist_pat = a:filepattern
     let g:fudist_word = a:searchWord
   endif
   silent! let $PATH  = saved_path
+  if exists('$CYGWIN') && s:MSWindows
+    silent! let $CYGWIN = saved_CYGWIN
+  endif
   if exists('g:qfixtempname')
     silent! call delete(g:qfixtempname)
   endif
