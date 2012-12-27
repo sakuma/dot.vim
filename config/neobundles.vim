@@ -115,7 +115,7 @@ NeoBundle 'Lokaltog/vim-powerline'
 " let g:Powerline_theme = 'solarized256'
 " let g:Powerline_colorscheme = 'skwp'
 let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
-let g:Powerline_stl_path_style = 'full'
+" let g:Powerline_stl_path_style = 'filename'  " default 'relative'
 let g:Powerline_cache_enabled = 0
 let g:Powerline_mode_n = ' N '
 " let g:Powerline_mode_i = 'Insert'
