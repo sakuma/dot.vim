@@ -70,7 +70,7 @@ set whichwrap=b,s,h,l,<,>,[,] "カーソルを行頭、行末で止まらない�
 
 set mouse=a " マウス機能有効化
 " 常に開いているファイルと同じディレクトリをカレントディレクトリにする
-au BufEnter * execute ":lcd " . expand("%:p:h")
+" au BufEnter * execute ":lcd " . expand("%:p:h")
 
 " 保存時に行末の空白削除
 autocmd BufWritePre * :%s/\s\+$//ge
