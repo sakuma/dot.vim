@@ -105,7 +105,10 @@ if has('gui_macvim')
     set imdisable " IMを無効化
     set transparency=15 " 透明度を指定
     set antialias
-    set guifont=Monaco:h14
+    set guifont=RictyDiscord-Regular:h18
+    set guifontwide=RictyDiscord-Regular:h18
+    " set guifont=Monaco:h14
+    " set guifont=Ricty:h18
 endif
 
 " if has("gui_running")

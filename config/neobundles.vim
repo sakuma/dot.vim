@@ -120,7 +120,7 @@ let g:Powerline_cache_enabled = 0
 let g:Powerline_mode_n = ' N '
 " let g:Powerline_mode_i = 'Insert'
 " set guifont=Ricty_for_Powerline:h16
-" set guifontwide=Ricty:h16
+set guifontwide=Ricty:h16
 
 """" xml
 NeoBundle 'xmledit'
