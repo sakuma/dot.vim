@@ -97,6 +97,8 @@ augroup END
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
 
+set nofoldenable
+
 
 
 colorscheme torte
