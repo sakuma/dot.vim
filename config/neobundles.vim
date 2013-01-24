@@ -47,6 +47,8 @@ source ~/.vim/config/ruby.vim
 
 """ git plugin
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
+
 NeoBundle 'int3/vim-extradite.git'
 
 """"" 検討
