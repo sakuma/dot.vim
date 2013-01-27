@@ -29,7 +29,7 @@ endif
 
 if version >= 702
   NeoBundle 'Shougo/unite.vim'
-  :source ~/.vim/config/unite.vim
+  source ~/.vim/config/unite.vim
 endif
 
 """ Ruby 関連

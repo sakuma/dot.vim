@@ -16,9 +16,9 @@ set hlsearch " 検索キーワードのハイライト
 set cursorline " カーソルラインの強調表示を有効化
 set ignorecase " 検索時に大文字小文字を区別しない
 
-:source ~/.vim/config/statusline.vim
+source ~/.vim/config/statusline.vim
 
-:source ~/.vim/config/keymap.vim
+source ~/.vim/config/keymap.vim
 
 set backupdir=$HOME/.vim/backup "バックアップファイルを作るディレクトリ
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
@@ -125,11 +125,11 @@ endif
 " vundle
 ":source ~/.vim/config/bundles.vim
 " neobundle
-:source ~/.vim/config/neobundles.vim
+source ~/.vim/config/neobundles.vim
 
 " 文字コード関連設定
-:source ~/.vim/config/character.vim
+source ~/.vim/config/character.vim
 
 " calendar
-:source ~/.vim/config/qfixhown-config.vim
+source ~/.vim/config/qfixhown-config.vim
 
