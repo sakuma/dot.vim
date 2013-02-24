@@ -8,7 +8,8 @@ let g:unite_enable_start_insert=1
 "let g:unite_winwidth = 40 "横幅40で開く
 
 " 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+nnoremap <silent> ,z :<C-u>Unite file_mru<CR>
 " cnoremap um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
 
 " レジスタ一覧
