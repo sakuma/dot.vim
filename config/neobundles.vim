@@ -42,7 +42,9 @@ NeoBundle 'tpope/vim-rails'
 " NeoBundle 'taichouchou2/vim-rails'
 " NeoBundle 'romanvbabenko/rails.vim'
 NeoBundle 'ujihisa/unite-rake'
-NeoBundle 'basyura/unite-rails'
+" NeoBundle 'basyura/unite-rails' " original
+NeoBundle 'n-sakuma/unite-rails'  " custom
+
 source ~/.vim/config/ruby.vim
 
 """ git plugin

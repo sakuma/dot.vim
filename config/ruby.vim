@@ -23,3 +23,10 @@ let g:rubycomplete_rails = 1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+"" unite-rails
+noremap <Leader>rr :<C-u>Unite rails/root<CR>
+noremap <Leader>ra :<C-u>Unite rails/app<CR>
+noremap <Leader>rc :<C-u>Unite rails/controller<CR>
+noremap <Leader>rm :<C-u>Unite rails/model<CR>
+noremap <Leader>rv :<C-u>Unite rails/view<CR>
+noremap <Leader>rh :<C-u>Unite rails/helper<CR>""
