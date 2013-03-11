@@ -50,6 +50,7 @@ source ~/.vim/config/ruby.vim
 """ git plugin
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'airblade/vim-gitgutter'
 source ~/.vim/config/gitconfig.vim
 
 NeoBundle 'int3/vim-extradite.git'
