@@ -47,13 +47,16 @@ NeoBundle 'n-sakuma/unite-rails'  " custom
 
 source ~/.vim/config/ruby.vim
 
-""" git plugin
+"""
+" Git plugins
+"
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'int3/vim-extradite.git'
+
 source ~/.vim/config/gitconfig.vim
 
-NeoBundle 'int3/vim-extradite.git'
 
 """"" 検討
 """

@@ -59,3 +59,10 @@ vnoremap <leader>gv :Gitv! --all<CR>
 """ jump to previous hunk:
 " :GitGutterPrevHunk.
 
+""""""""""""""
+" 'int3/vim-extradite.git'
+"
+" usage:
+"
+"   :Extradite
+"
