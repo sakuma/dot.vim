@@ -149,3 +149,14 @@ source ~/.vim/config/character.vim
 " calendar
 source ~/.vim/config/qfixhown-config.vim
 
+" Search Dash for word under cursor
+function! SearchDash()
+  let s:browser = "/usr/bin/open"
+  let s:wordUnderCursor = expand("<cword>")
+  let s:url = "dash://".s:wordUnderCursor
+  let s:cmd ="silent ! " . s:browser . " " . s:url
+  execute s:cmd
+  redraw!
+endfunction
+
+nnoremap <leader>dw :call SearchDash()<CR>
