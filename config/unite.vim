@@ -9,19 +9,19 @@ let g:unite_enable_start_insert=1
 
 " 最近使用したファイル一覧
 " nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-nnoremap <silent> ,z :<C-u>Unite file_mru<CR>
+nnoremap <leader>z :<C-u>Unite file_mru<CR>
 " cnoremap um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
 
 " レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <leader>ur :<C-u>Unite -buffer-name=register register<CR>
 " cnoremap ur :<C-u>Unite register -buffer-name=register<CR>
 
 " バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <leader>ub :<C-u>Unite buffer<CR>
 " cnoremap ub :<C-u>Unite buffer -buffer-name=buffer<CR>
 
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " cnoremap ue :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
 "file current_dir
