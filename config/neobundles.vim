@@ -118,6 +118,9 @@ NeoBundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
 :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
 
+NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+source ~/.vim/config/color.vim
+
 NeoBundle 'Lokaltog/vim-powerline'
 
 " let g:Powerline_theme = 'skwp'
