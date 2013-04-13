@@ -39,6 +39,8 @@ NeoBundle 'ruby-matchit'
 
 " Railsサポート
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-rake'
 " NeoBundle 'taichouchou2/vim-rails'
 " NeoBundle 'romanvbabenko/rails.vim'
 NeoBundle 'ujihisa/unite-rake'
@@ -148,7 +150,12 @@ noremap <C-S-p> :YRSearch<CR>
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
 NeoBundle 'csv.vim'
-NeoBundle 'Shougo/vimproc.git'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
