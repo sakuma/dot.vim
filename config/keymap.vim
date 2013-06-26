@@ -103,6 +103,10 @@ map <Enter> o<ESC>
 " visualモードで選択して「Ctrl-p」で貼り付け
 vnoremap <silent> <C-p> "0p<CR>
 
+imap <C-C>t <Plug>ToggleI
+nmap <C-C>t <Plug>ToggleN
+vmap <C-C>t <Plug>ToggleV
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 参考)
