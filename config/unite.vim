@@ -13,11 +13,11 @@ nnoremap <leader>z :<C-u>Unite file_mru<CR>
 " cnoremap um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
 
 " レジスタ一覧
-nnoremap <leader>ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <leader>re :<C-u>Unite -buffer-name=register register<CR>
 " cnoremap ur :<C-u>Unite register -buffer-name=register<CR>
 
 " バッファ一覧
-nnoremap <leader>ub :<C-u>Unite buffer<CR>
+nnoremap <leader>b :<C-u>Unite buffer<CR>
 " cnoremap ub :<C-u>Unite buffer -buffer-name=buffer<CR>
 
 " ファイル一覧
