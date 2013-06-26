@@ -144,6 +144,7 @@ NeoBundle 'mru.vim'
 
 NeoBundle 'YankRing.vim'
 let g:yankring_max_history = 50
+let g:yankring_replace_n_pkey = '<m-p>'
 noremap <C-S-p> :YRSearch<CR>
 "noremap <C-S-u> :YRShow<CR>
 

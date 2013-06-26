@@ -39,7 +39,7 @@ imap <C-@> <C-[>
 imap <C-b> <Left>
 imap <C-f> <Right>
 imap <C-n> <Down>
-imap <C-p> <UP>
+" imap <C-p> <UP>
 imap <C-a> <home>
 imap <C-e> <end>
 
@@ -99,6 +99,9 @@ nnoremap <C-S-Tab> gT
 "ノーマルモード: Enterで一行挿入
 map <S-Enter> O<ESC>
 map <Enter> o<ESC>
+
+" visualモードで選択して「Ctrl-p」で貼り付け
+vnoremap <silent> <C-p> "0p<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
