@@ -181,7 +181,7 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 
 NeoBundle 'taku-o/vim-toggle'
-let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'while':'until', 'until':'while', 'elsif':'else', 'else':'elsif' }
+let g:toggle_pairs = { 'and': 'or', 'or': 'and', 'if': 'unless', 'unless': 'if', 'while': 'until', 'until': 'while', 'elsif': 'else', 'else': 'elsif' }
 
 filetype plugin indent on
 
