@@ -19,8 +19,8 @@
 "   :verb[ose] map [割り当てキー]
 "
 
-
-let mapleader = ','
+" Space
+let mapleader = " "
 
 "vimrcをリローダブルにする
 " reload vimrc
@@ -43,6 +43,8 @@ imap <C-n> <Down>
 imap <C-a> <home>
 imap <C-e> <end>
 
+" Ctrl-s で保存(入力モード, ノーマルモード, ビジュアルモード)
+noremap <C-s> <ESC>:w<CR>
 
 " CTRL-hjklでウィンドウ移動
 " nnoremap <C-j> ;<C-w>j
@@ -68,8 +70,8 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
-vnoremap - "zdi<% <C-R>z -%><ESC>
-vnoremap % "zdi<%= <C-R>z %><ESC>
+" vnoremap - "zdi<% <C-R>z -%><ESC>
+" vnoremap % "zdi<%= <C-R>z %><ESC>
 
 " ctrl+tab, ctrl+shift+tab でタブ切り替え
 nnoremap <C-Tab>   gt
