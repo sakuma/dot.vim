@@ -3,17 +3,25 @@
 ""
 
 " シンタックスハイライト有効化
-" (背景黒向け。白はコメントアウトされている設定を使用)
+" 背景黒向け
 syntax on
-highlight Normal ctermbg=black ctermfg=grey
+
+set cursorline " カーソルラインの強調表示を有効化
+" highlight Normal ctermbg=black ctermfg=grey
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
-highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
+highlight cursorline term=reverse cterm=reverse
+
+" 背景白向け
+" highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 "highlight Normal ctermbg=grey ctermfg=black
 "highlight StatusLine term=none cterm=none ctermfg=grey ctermbg=black
 "highlight CursorLine term=none cterm=none ctermfg=darkgray ctermbg=none
+
+" highlight cursorline term=reverse cterm=reverse
+"
 "set nohlsearch " 検索キーワードをハイライトしないように設定
 set hlsearch " 検索キーワードのハイライト
-set cursorline " カーソルラインの強調表示を有効化
+
 set ignorecase " 検索時に大文字小文字を区別しない
 
 source ~/.vim/config/statusline.vim
