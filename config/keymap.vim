@@ -45,6 +45,7 @@ imap <C-e> <end>
 
 " Ctrl-s で保存(入力モード, ノーマルモード, ビジュアルモード)
 noremap <C-s> <ESC>:w<CR>
+inoremap <C-s> <ESC>:w<CR>
 
 " CTRL-hjklでウィンドウ移動
 " nnoremap <C-j> ;<C-w>j
