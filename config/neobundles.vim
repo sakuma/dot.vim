@@ -78,6 +78,9 @@ NeoBundle 'tomtom/tcomment_vim'
 
 if version >= 702
   NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'honza/vim-snippets'
+  NeoBundle 'Shougo/context_filetype.vim'
 endif
 
 :source ~/.vim/config/neocomplcache.vim
