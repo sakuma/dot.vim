@@ -123,8 +123,18 @@ NeoBundle 'Align'
 :let g:Align_xstrlen = 3  " for japanese string
 :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
 
-NeoBundle 'vim-scripts/Colour-Sampler-Pack'
-source ~/.vim/config/color.vim
+""""""""""""""""""""""""""""""""
+"" color
+
+" NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+" source ~/.vim/config/color.vim
+" colorscheme torte
+
+NeoBundle 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+" set background=light
+colorscheme solarized
 
 NeoBundle 'Lokaltog/vim-powerline'
 
@@ -138,6 +148,9 @@ let g:Powerline_mode_n = ' N '
 " let g:Powerline_mode_i = 'Insert'
 " set guifont=Ricty_for_Powerline:h16
 set guifontwide=Ricty:h16
+
+""""""""""""""""""""""""""""""""
+
 
 """" xml
 NeoBundle 'xmledit'

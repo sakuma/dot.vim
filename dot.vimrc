@@ -125,7 +125,6 @@ endfunction
 nnoremap <silent> <Space>cd :<C-u>CD<CR>
 
 
-colorscheme torte
 if has('gui_macvim')
     set showtabline=2 " タブを常に表示
     set imdisable " IMを無効化
