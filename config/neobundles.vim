@@ -77,6 +77,9 @@ let NERDTreeShowHidden = 1
 NeoBundle 'tomtom/tcomment_vim'
 
 if version >= 702
+  NeoBundle 'Shougo/neocomplete.vim'
+  :source ~/.vim/config/neocomplete.vim
+
   NeoBundle 'Shougo/neosnippet'
   NeoBundle 'honza/vim-snippets'
   :source ~/.vim/config/snippet.vim
