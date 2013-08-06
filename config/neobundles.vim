@@ -207,8 +207,22 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 
-NeoBundle 'taku-o/vim-toggle'
-let g:toggle_pairs = { 'and': 'or', 'or': 'and', 'if': 'unless', 'unless': 'if', 'while': 'until', 'until': 'while', 'elsif': 'else', 'else': 'elsif' }
+NeoBundle 'AndrewRadev/switch.vim'
+let g:switch_custom_definitions =
+      \ [
+      \   ["unless", "if"],
+      \   ["and", "or"],
+      \   ["while", "until"],
+      \   ["else", "elsif"],
+      \   ["blank?", "present?"],
+      \   ["describe", "context", "specific", "example"],
+      \   ['before', 'after'],
+      \   ['get', 'post', 'put', 'delete'],
+      \   ['==', 'be_eql', 'equal'],
+      \   ['.to_not', '.to'],
+      \   { '([^. ]+).should(_not|)': 'expect(\1).to\2' },
+      \   { 'expect(([^. ]+)).to(_not|)': '\1.should\2' },
+      \ ]
 
 filetype plugin indent on
 
