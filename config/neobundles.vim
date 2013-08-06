@@ -203,6 +203,7 @@ NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
 
 NeoBundle 'thinca/vim-quickrun'
+source ~/.vim/config/quickrun.vim
 
 "" grepの拡張
 NeoBundle 'fuenor/qfixgrep'
