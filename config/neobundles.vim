@@ -35,6 +35,7 @@ endif
 """ Ruby 関連
 NeoBundle 'ruby.vim'
 NeoBundle 'tpope/vim-endwise'
+source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
 " Railsサポート
