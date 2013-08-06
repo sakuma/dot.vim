@@ -132,14 +132,17 @@ NeoBundle 'Align'
 " source ~/.vim/config/color.vim
 " colorscheme torte
 
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+
 if has('gui_macvim')
-  NeoBundle 'altercation/vim-colors-solarized'
+  " solarized
   syntax enable
   set background=dark
   " set background=light
   colorscheme solarized
 else
-  NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+  " Colour-Sampler-Pack
   source ~/.vim/config/color.vim
   colorscheme torte
 endif
