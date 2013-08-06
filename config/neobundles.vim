@@ -213,6 +213,8 @@ NeoBundle 'mileszs/ack.vim'
 
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/zencoding-vim'
+" TODO: replace zencoding-vim
+" NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle 'kchmck/vim-coffee-script'
