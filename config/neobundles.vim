@@ -38,6 +38,15 @@ NeoBundle 'tpope/vim-endwise'
 source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
+
+NeoBundle 'kana/vim-textobj-user'
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
+" ブロック選択
+NeoBundle 'nelstrom/vim-textobj-rubyblock'
+
 " Railsサポート
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-bundler'
