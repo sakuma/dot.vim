@@ -43,9 +43,19 @@ imap <C-n> <Down>
 imap <C-a> <home>
 imap <C-e> <end>
 
-" Ctrl-s で保存(入力モード, ノーマルモード, ビジュアルモード)
-noremap <C-s> <ESC>:w<CR>
-inoremap <C-s> <ESC>:w<CR>
+" Ctrl-s で保存
+" 保存後ノーマルモードに戻る
+imap <script> <C-s> <SID>(gui-save)<Esc>
+nmap <script> <C-s> <SID>(gui-save)
+imap <script> <SID>(gui-save) <C-o><SID>(gui-save)
+nnoremap      <SID>(gui-save) :<C-u>call <SID>gui_save()<CR>
+function! s:gui_save()
+    if bufname('%') ==# ''
+        browse confirm saveas
+    else
+        update
+    endif
+endfunction
 
 " CTRL-hjklでウィンドウ移動
 " nnoremap <C-j> ;<C-w>j
