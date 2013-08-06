@@ -4,6 +4,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 
+let g:ruby_fold = 1
+
 " rails.vim
 let g:rails_level=4
 let g:rails_default_file="app/controllers/application.rb"
