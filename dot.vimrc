@@ -61,7 +61,8 @@ set incsearch "インクリメンタルサーチを行う
 
 "listで表示される文字のフォーマットを指定する
 set list
-set listchars=eol:$,tab:>\ ,extends:< "タブ文字、行末など不可視文字を表示する
+" タブ文字、行末など不可視文字を表示する
+set listchars=tab:»-,extends:»,precedes:«,nbsp:%,trail:-,eol:↲
 
 set showmatch "閉じ括弧が入力されたとき、対応する括弧を表示する
 set smartcase "検索時に大文字を含んでいたら大/小を区別
