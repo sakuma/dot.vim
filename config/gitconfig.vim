@@ -1,4 +1,21 @@
 "*****************************************
+"  fugitive
+"
+"
+" Fugitive {{{
+nnoremap [git] <Nop>
+nmap <Leader>g [git]
+nnoremap [git]d :<C-u>Gdiff HEAD<Enter>
+nnoremap [git]s :<C-u>Gstatus<Enter>
+nnoremap [git]l :<C-u>Glog<Enter>
+nnoremap [git]a :<C-u>Gwrite<Enter>
+nnoremap [git]c :<C-u>Gcommit<Enter>
+nnoremap [git]C :<C-u>Git commit --amend<Enter>
+nnoremap [git]b :<C-u>Gblame<Enter>
+" }}}
+
+
+"*****************************************
 " GitV
 
 "*********************
