@@ -9,24 +9,9 @@ if [ -x ~/.vimrc ]; then
 fi
 
 cd ~/.vim
-neobundle=$(ls neobundle.vim | wc -l)
-if [ $neobundle = 0 ]; then
-  git submodule init && git submodule update
-else
-  git submodule sync
-fi
 
-if [ -d ~/.vim/bundle/vimproc ]; then
-  cd ~/.vim/bundle/vimproc
-  arch=$(uname)
-  if [ $arch = 'Darwin' ]; then
-    make -f make_mac.mak
-    if [ $? = 0 ]; then
-      echo "success"
-    else
-      echo "vim-proc: build faild"
-    fi
-  fi
+if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
+  git clone git://github.com/Shougo/neobundle.vim.git
 fi
 
 if [ ! -x ~/bin ]; then

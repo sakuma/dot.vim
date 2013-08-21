@@ -22,10 +22,13 @@ set nocompatible "Vi互換をオフ
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle'))
+  " set runtimepath+=~/.vim/neobundle.vim
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+call neobundle#rc(expand('~/.vim/bundle/'))
 
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 if version >= 702
   NeoBundle 'Shougo/unite.vim'
