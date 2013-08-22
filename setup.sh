@@ -11,7 +11,7 @@ fi
 cd ~/.vim
 
 if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
-  git clone git://github.com/Shougo/neobundle.vim.git
+  git clone git://github.com/Shougo/neobundle.vim.git bundle/neobundle.vim
 fi
 
 if [ ! -x ~/bin ]; then
