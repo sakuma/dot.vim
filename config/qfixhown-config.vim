@@ -1,5 +1,5 @@
 " qfixappにruntimepathを通す(パスは環境に合わせてください)
-set runtimepath+=~/.vim/libs/qfixapp
+set runtimepath+=~/.vim/bundle/qfixhome
 set runtimepath+=~/.vim/bundle/qfixgrep
 
 " キーマップリーダー
