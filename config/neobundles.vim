@@ -35,6 +35,8 @@ if version >= 702
   source ~/.vim/config/unite.vim
 endif
 
+NeoBundle 'scrooloose/syntastic'
+
 """ Ruby 関連
 NeoBundle 'ruby.vim'
 NeoBundle 'tpope/vim-endwise'
