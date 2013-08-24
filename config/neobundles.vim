@@ -212,6 +212,7 @@ NeoBundle 'thinca/vim-quickrun'
 source ~/.vim/config/quickrun.vim
 
 "" grepの拡張
+NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
 "" 設定: config/ffixhown-config.vim
 
