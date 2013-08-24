@@ -191,6 +191,7 @@ NeoBundle 'xmledit'
 
 """" recent opened file
 NeoBundle 'mru.vim'
+NeoBundle 'thinca/vim-poslist'
 
 """" markdown
 NeoBundle 'plasticboy/vim-markdown'
