@@ -50,6 +50,7 @@ NeoBundle 'tpope/vim-endwise'
 source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
+NeoBundle 'thinca/vim-visualstar'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
 set nocompatible
