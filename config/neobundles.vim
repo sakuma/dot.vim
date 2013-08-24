@@ -233,6 +233,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 
 NeoBundle 'AndrewRadev/switch.vim'
 let g:switch_custom_definitions =
