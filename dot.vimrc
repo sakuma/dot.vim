@@ -24,6 +24,9 @@ set hlsearch " 検索キーワードのハイライト
 
 set ignorecase " 検索時に大文字小文字を区別しない
 
+" 文字コード関連設定
+source ~/.vim/config/character.vim
+
 source ~/.vim/config/statusline.vim
 
 source ~/.vim/config/keymap.vim
@@ -150,9 +153,6 @@ endif
 ":source ~/.vim/config/bundles.vim
 " neobundle
 source ~/.vim/config/neobundles.vim
-
-" 文字コード関連設定
-source ~/.vim/config/character.vim
 
 " calendar
 source ~/.vim/config/qfixhown-config.vim

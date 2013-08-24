@@ -30,10 +30,19 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+
 if version >= 702
   NeoBundle 'Shougo/unite.vim'
   source ~/.vim/config/unite.vim
 endif
+
+NeoBundle 'scrooloose/syntastic'
 
 """ Ruby 関連
 NeoBundle 'ruby.vim'
@@ -41,7 +50,7 @@ NeoBundle 'tpope/vim-endwise'
 source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
-
+NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
 set nocompatible
 if has("autocmd")
@@ -195,12 +204,6 @@ noremap <C-S-p> :YRSearch<CR>
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
 NeoBundle 'csv.vim'
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
 
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
@@ -209,12 +212,16 @@ NeoBundle 'thinca/vim-quickrun'
 source ~/.vim/config/quickrun.vim
 
 "" grepの拡張
+NeoBundle 'vim-scripts/grep.vim'
+NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
 "" 設定: config/ffixhown-config.vim
 
 NeoBundle 'mileszs/ack.vim'
 
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'vim-scripts/css_color.vim'
+NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'mattn/zencoding-vim'
 " TODO: replace zencoding-vim
 " NeoBundle 'mattn/emmet-vim'
