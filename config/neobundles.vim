@@ -217,6 +217,8 @@ NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'mileszs/ack.vim'
 
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'vim-scripts/css_color.vim'
+NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'mattn/zencoding-vim'
 " TODO: replace zencoding-vim
 " NeoBundle 'mattn/emmet-vim'
