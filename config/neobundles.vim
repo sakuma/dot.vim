@@ -259,7 +259,7 @@ NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
 "" 設定: config/ffixhown-config.vim
 
-NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
 
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-scripts/css_color.vim'
