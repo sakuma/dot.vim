@@ -270,6 +270,7 @@ NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-haml'
 
 "" tool 群
 NeoBundle 'nathanaelkane/vim-indent-guides'
