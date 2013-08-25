@@ -50,6 +50,19 @@ NeoBundle 'tpope/vim-endwise'
 source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
+NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'Lokaltog/vim-easymotion'
+" easymotion settting {{{
+" ホームポジションに近いキーを使う
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" 「;」 + 何かにマッピング
+let g:EasyMotion_leader_key=":"
+" 1 ストローク選択を優先する
+let g:EasyMotion_grouping=1
+" カラー設定変更
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
+" }}}
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
 set nocompatible
@@ -143,9 +156,37 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 
-NeoBundle 'Align'
-:let g:Align_xstrlen = 3  " for japanese string
-:let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
+NeoBundle 'godlygeek/tabular'
+
+" tabular config {{{
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a> :Tabularize /=><CR>
+  vmap <Leader>a> :Tabularize /=><CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+" inoremap <silent> | <Bar><Esc>:call <SID>align()<CR>a
+" function! s:align()
+"   let p = '^\s*|\s.*\s|\s*$'
+"   " if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+"   if getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+"     let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+"     let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+"     Tabularize /|/l1
+"     normal! 0
+"     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+"   endif
+" endfunction
+"
+" replace by  'Tabular'
+" NeoBundle 'Align'
+" :let g:Align_xstrlen = 3  " for japanese string
+" :let g:DrChipTopLvlMenu = ''   " remove 'DrChip' menu
+"
+" }}}
 
 """"""""""""""""""""""""""""""""
 "" color
@@ -190,6 +231,7 @@ NeoBundle 'xmledit'
 
 """" recent opened file
 NeoBundle 'mru.vim'
+NeoBundle 'thinca/vim-poslist'
 
 """" markdown
 NeoBundle 'plasticboy/vim-markdown'
@@ -217,7 +259,7 @@ NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
 "" 設定: config/ffixhown-config.vim
 
-NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
 
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-scripts/css_color.vim'
@@ -228,11 +270,13 @@ NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-haml'
 
 "" tool 群
 NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 
 NeoBundle 'AndrewRadev/switch.vim'
 let g:switch_custom_definitions =
