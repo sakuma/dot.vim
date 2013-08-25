@@ -51,6 +51,18 @@ source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
 NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'Lokaltog/vim-easymotion'
+" easymotion settting {{{
+" ホームポジションに近いキーを使う
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" 「;」 + 何かにマッピング
+let g:EasyMotion_leader_key=":"
+" 1 ストローク選択を優先する
+let g:EasyMotion_grouping=1
+" カラー設定変更
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
+" }}}
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
 set nocompatible
