@@ -4,8 +4,8 @@ cat <<-EOS
 
 EOS
 
-if [ -x ~/.vimrc ]; then
-  rm ~/.vimrc
+if [ -f ~/.vimrc ]; then
+  mv ~/.vimrc{,.old}
 fi
 
 cd ~/.vim
@@ -30,10 +30,6 @@ if [ ! -x ~/.vim/docs/rubyrefm ]; then
   mkdir -p ~/.vim/docs/rubyrefm
   mv /tmp/$REFERENCE_FILE ~/.vim/docs/rubyrefm
   rm /tmp/$REFERENCE_ARCHIVE_FILE
-fi
-
-if [ ! -e ~/.vimrc ]; then
-  ln -fs ~/.vim/dot.vimrc ~/.vimrc
 fi
 
 cat <<-EOS
