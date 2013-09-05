@@ -25,7 +25,7 @@ let mapleader = " "
 "vimrcをリローダブルにする
 " reload vimrc
 noremap <C-c><C-c> <C-c>
-noremap <C-x><C-x>e :edit $HOME/.vim/dot.vimrc<CR>
+noremap <C-x><C-x>e :edit $HOME/.vim/vimrc<CR>
 noremap <C-x><C-x> :source $HOME/.vimrc<CR>
 
 " ノーマルモードで ;と:を入れ替え
