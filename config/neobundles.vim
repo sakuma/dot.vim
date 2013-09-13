@@ -231,6 +231,8 @@ NeoBundle 'xmledit'
 
 """" recent opened file
 NeoBundle 'mru.vim'
+let MRU_File = $HOME . '/.vim/vim_mru_files'
+
 NeoBundle 'thinca/vim-poslist'
 
 """" markdown
