@@ -18,7 +18,7 @@
 " NeoBundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
 
-set nocompatible "Vi互換をオフ
+:set nocompatible "Vi互換をオフ
 filetype off
 
 if has('vim_starting')
@@ -47,25 +47,25 @@ NeoBundle 'scrooloose/syntastic'
 """ Ruby 関連
 NeoBundle 'ruby.vim'
 NeoBundle 'tpope/vim-endwise'
-source $VIMRUNTIME/macros/matchit.vim
+:source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'Lokaltog/vim-easymotion'
 " easymotion settting {{{
 " ホームポジションに近いキーを使う
-let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+:let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
 " 「;」 + 何かにマッピング
-let g:EasyMotion_leader_key=":"
+:let g:EasyMotion_leader_key=":"
 " 1 ストローク選択を優先する
-let g:EasyMotion_grouping=1
+:let g:EasyMotion_grouping=1
 " カラー設定変更
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 " }}}
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
-set nocompatible
+:set nocompatible
 if has("autocmd")
   filetype indent plugin on
 endif
@@ -82,7 +82,7 @@ NeoBundle 'ujihisa/unite-rake'
 " NeoBundle 'basyura/unite-rails' " original
 NeoBundle 'n-sakuma/unite-rails'  " custom
 
-source ~/.vim/config/ruby.vim
+:source ~/.vim/config/ruby.vim
 
 """
 " Git plugins
@@ -92,7 +92,7 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite.git'
 
-source ~/.vim/config/gitconfig.vim
+:source ~/.vim/config/gitconfig.vim
 
 
 """"" 検討
@@ -107,7 +107,7 @@ source ~/.vim/config/gitconfig.vim
 " NeoBundle 'project.vim'
 NeoBundle 'scrooloose/nerdtree'
 :nnoremap <F3> :NERDTreeToggle<CR>
-let NERDTreeShowHidden = 1
+:let NERDTreeShowHidden = 1
 
 NeoBundle 'tomtom/tcomment_vim'
 
@@ -151,7 +151,7 @@ NeoBundle 'mattn/calendar-vim'
 "   more ... :help open-browser
 "
 NeoBundle 'tyru/open-browser.vim'
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
+:let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
@@ -215,13 +215,13 @@ NeoBundle 'Lokaltog/vim-powerline'
 " let g:Powerline_theme = 'skwp'
 " let g:Powerline_theme = 'solarized256'
 " let g:Powerline_colorscheme = 'skwp'
-let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
+:let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
 " let g:Powerline_stl_path_style = 'filename'  " default 'relative'
-let g:Powerline_cache_enabled = 0
-let g:Powerline_mode_n = ' N '
+:let g:Powerline_cache_enabled = 0
+:let g:Powerline_mode_n = ' N '
 " let g:Powerline_mode_i = 'Insert'
 " set guifont=Ricty_for_Powerline:h16
-set guifontwide=Ricty:h16
+:set guifontwide=Ricty:h16
 
 """"""""""""""""""""""""""""""""
 
@@ -231,7 +231,7 @@ NeoBundle 'xmledit'
 
 """" recent opened file
 NeoBundle 'mru.vim'
-let MRU_File = $HOME . '/.vim/vim_mru_files'
+:let MRU_File = $HOME . '/.vim/vim_mru_files'
 
 NeoBundle 'thinca/vim-poslist'
 
@@ -242,8 +242,8 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 NeoBundle 'zaiste/tmux.vim'
 
 NeoBundle 'YankRing.vim'
-let g:yankring_max_history = 50
-let g:yankring_replace_n_pkey = '<m-p>'
+:let g:yankring_max_history = 50
+:let g:yankring_replace_n_pkey = '<m-p>'
 noremap <C-S-p> :YRSearch<CR>
 "noremap <C-S-u> :YRShow<CR>
 
@@ -255,7 +255,7 @@ NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
 
 NeoBundle 'thinca/vim-quickrun'
-source ~/.vim/config/quickrun.vim
+:source ~/.vim/config/quickrun.vim
 
 "" grepの拡張
 NeoBundle 'vim-scripts/grep.vim'
@@ -279,12 +279,12 @@ NeoBundle 'tpope/vim-haml'
 
 "" tool 群
 NeoBundle 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=1
+:let g:indent_guides_enable_on_vim_startup=1
+:let g:indent_guides_guide_size=1
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 
 NeoBundle 'AndrewRadev/switch.vim'
-let g:switch_custom_definitions =
+:let g:switch_custom_definitions =
       \ [
       \   ["unless", "if"],
       \   ["and", "or"],
