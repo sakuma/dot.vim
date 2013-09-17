@@ -261,6 +261,7 @@ source ~/.vim/config/quickrun.vim
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
+NeoBundle 'thinca/vim-qfreplace'
 "" 設定: config/ffixhown-config.vim
 
 NeoBundle 'rking/ag.vim'
