@@ -138,6 +138,8 @@ if has('gui_macvim')
     set guifontwide=RictyDiscord-Regular:h16
     " set guifont=Monaco:h14
     " set guifont=Ricty:h18
+else
+  source ~/.vim/config/tabpage.vim
 endif
 
 " if has("gui_running")
