@@ -50,6 +50,9 @@ NeoBundle 'tpope/vim-endwise'
 :source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
 
+""" Scala
+NeoBundle 'derekwyatt/vim-scala'
+
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'Lokaltog/vim-easymotion'
 " easymotion settting {{{
