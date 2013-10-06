@@ -43,6 +43,15 @@ imap <C-n> <Down>
 imap <C-a> <home>
 imap <C-e> <end>
 
+"カーソルを表示行で移動する。
+nnoremap j gj
+nnoremap k gk
+" nnoremap <Down> gj
+" nnoremap <Up>   gk"
+" 逆に普通の行単位で移動したい時のために逆の map も設定しておく
+nnoremap gj j
+nnoremap gk k"
+
 " Ctrl-s で保存
 " 保存後ノーマルモードに戻る
 imap <script> <C-s> <SID>(gui-save)<Esc>
