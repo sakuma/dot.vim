@@ -272,13 +272,13 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'mattn/zencoding-vim'
-" TODO: replace zencoding-vim
-" NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-haml'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'tell-k/vim-browsereload-mac'
 
 "" tool 群
 NeoBundle 'nathanaelkane/vim-indent-guides'
