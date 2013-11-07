@@ -275,7 +275,13 @@ NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
+
 NeoBundle 'kchmck/vim-coffee-script'
+" vimにcoffeeファイルタイプを認識させる
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" インデントを設定
+autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tell-k/vim-browsereload-mac'
