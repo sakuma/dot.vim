@@ -14,6 +14,9 @@ if [ ! -d ~/.vim/bundle/neobundle.vim ]; then
   git clone git://github.com/Shougo/neobundle.vim.git bundle/neobundle.vim
 fi
 
+"" Add these colours to ~/.Xresources
+curl https://gist.github.com/w0ng/3278077/raw/4d1d04906349efe4054e314b8a19f027bd537eb1/.Xresources-hybrid > ~/.Xresources
+
 if [ ! -x ~/bin ]; then
   mkdir ~/bin
 fi

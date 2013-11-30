@@ -194,24 +194,13 @@ endif
 """"""""""""""""""""""""""""""""
 "" color
 
-" NeoBundle 'vim-scripts/Colour-Sampler-Pack'
-" source ~/.vim/config/color.vim
-" colorscheme torte
-
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+NeoBundle 'w0ng/vim-hybrid'
 
-if has('gui_macvim')
-  " solarized
-  syntax enable
-  set background=dark
-  " set background=light
-  colorscheme solarized
-else
-  " Colour-Sampler-Pack
-  source ~/.vim/config/color.vim
-  colorscheme torte
-endif
+source ~/.vim/config/color.vim
+
+
 
 NeoBundle 'Lokaltog/vim-powerline'
 
