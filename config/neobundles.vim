@@ -308,3 +308,7 @@ filetype plugin indent on
 "         \ string(neobundle#get_not_installed_bundle_names())
 "   echomsg 'Please execute ":NeoBundleInstall" command.'
 " endif
+
+
+" Installation check.
+NeoBundleCheck
