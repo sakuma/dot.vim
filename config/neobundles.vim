@@ -306,6 +306,9 @@ NeoBundle 'AndrewRadev/switch.vim'
       \   { 'expect(([^. ]+)).to(_not|)': '\1.should\2' },
       \ ]
 
+NeoBundle 'syui/wauto.vim'
+let g:auto_write = 1
+
 filetype plugin indent on
 
 " Installation check.
