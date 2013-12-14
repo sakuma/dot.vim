@@ -58,8 +58,8 @@ NeoBundle 'Lokaltog/vim-easymotion'
 " easymotion settting {{{
 " ホームポジションに近いキーを使う
 :let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
-" 「;」 + 何かにマッピング
-:let g:EasyMotion_leader_key=":"
+" <Leader> + e + (w, k, ...)
+:let g:EasyMotion_leader_key="e"
 " 1 ストローク選択を優先する
 :let g:EasyMotion_grouping=1
 " カラー設定変更
