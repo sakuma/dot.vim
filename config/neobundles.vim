@@ -94,8 +94,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite.git'
-
-:source ~/.vim/config/gitconfig.vim
+" see other conf
 
 
 """"" 検討
@@ -197,10 +196,7 @@ endif
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Colour-Sampler-Pack'
 NeoBundle 'w0ng/vim-hybrid'
-
-source ~/.vim/config/color.vim
-
-
+" see other conf
 
 NeoBundle 'Lokaltog/vim-powerline'
 
@@ -247,9 +243,7 @@ NeoBundle 'csv.vim'
 
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
-
-NeoBundle 'thinca/vim-quickrun'
-:source ~/.vim/config/quickrun.vim
+NeoBundle 'thinca/vim-quickrun'  " see other conf
 
 "" grepの拡張
 NeoBundle 'vim-scripts/grep.vim'
@@ -309,6 +303,13 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'syui/wauto.vim'
 let g:auto_write = 1
 NeoBundle 'gmarik/sudo-gui.vim'
+" NeoBundle 'thinca/vim-localrc'
+
+" ~/.vim/config/neobundle 配下のファイルを読み込む
+for f in split(glob('~/.vim/config/neobundle/*.vim'), '\n')
+  exe 'source' f
+endfor
+
 
 filetype plugin indent on
 
