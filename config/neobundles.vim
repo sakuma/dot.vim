@@ -283,6 +283,12 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 :let g:indent_guides_guide_size=1
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 
+NeoBundle 'osyo-manga/vim-over'
+:let g:over_command_line_prompt = "Over Command> "
+" カーソル下の単語をハイライト付きで置換
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+
 NeoBundle 'AndrewRadev/switch.vim'
 :let g:switch_custom_definitions =
       \ [
