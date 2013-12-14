@@ -308,6 +308,7 @@ NeoBundle 'AndrewRadev/switch.vim'
 
 NeoBundle 'syui/wauto.vim'
 let g:auto_write = 1
+NeoBundle 'gmarik/sudo-gui.vim'
 
 filetype plugin indent on
 
