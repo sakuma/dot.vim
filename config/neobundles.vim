@@ -18,7 +18,7 @@
 " NeoBundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
 
-set nocompatible "Vi互換をオフ
+:set nocompatible "Vi互換をオフ
 filetype off
 
 if has('vim_starting')
@@ -47,25 +47,28 @@ NeoBundle 'scrooloose/syntastic'
 """ Ruby 関連
 NeoBundle 'ruby.vim'
 NeoBundle 'tpope/vim-endwise'
-source $VIMRUNTIME/macros/matchit.vim
+:source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
+
+""" Scala
+NeoBundle 'derekwyatt/vim-scala'
 
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'Lokaltog/vim-easymotion'
 " easymotion settting {{{
 " ホームポジションに近いキーを使う
-let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
-" 「;」 + 何かにマッピング
-let g:EasyMotion_leader_key=":"
+:let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" <Leader> + e + (w, k, ...)
+:let g:EasyMotion_leader_key="e"
 " 1 ストローク選択を優先する
-let g:EasyMotion_grouping=1
+:let g:EasyMotion_grouping=1
 " カラー設定変更
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 " }}}
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
-set nocompatible
+:set nocompatible
 if has("autocmd")
   filetype indent plugin on
 endif
@@ -82,7 +85,7 @@ NeoBundle 'ujihisa/unite-rake'
 " NeoBundle 'basyura/unite-rails' " original
 NeoBundle 'n-sakuma/unite-rails'  " custom
 
-source ~/.vim/config/ruby.vim
+:source ~/.vim/config/ruby.vim
 
 """
 " Git plugins
@@ -92,7 +95,7 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite.git'
 
-source ~/.vim/config/gitconfig.vim
+:source ~/.vim/config/gitconfig.vim
 
 
 """"" 検討
@@ -107,7 +110,7 @@ source ~/.vim/config/gitconfig.vim
 " NeoBundle 'project.vim'
 NeoBundle 'scrooloose/nerdtree'
 :nnoremap <F3> :NERDTreeToggle<CR>
-let NERDTreeShowHidden = 1
+:let NERDTreeShowHidden = 1
 
 NeoBundle 'tomtom/tcomment_vim'
 
@@ -151,7 +154,7 @@ NeoBundle 'mattn/calendar-vim'
 "   more ... :help open-browser
 "
 NeoBundle 'tyru/open-browser.vim'
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
+:let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
@@ -191,37 +194,26 @@ endif
 """"""""""""""""""""""""""""""""
 "" color
 
-" NeoBundle 'vim-scripts/Colour-Sampler-Pack'
-" source ~/.vim/config/color.vim
-" colorscheme torte
-
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+NeoBundle 'w0ng/vim-hybrid'
 
-if has('gui_macvim')
-  " solarized
-  syntax enable
-  set background=dark
-  " set background=light
-  colorscheme solarized
-else
-  " Colour-Sampler-Pack
-  source ~/.vim/config/color.vim
-  colorscheme torte
-endif
+source ~/.vim/config/color.vim
+
+
 
 NeoBundle 'Lokaltog/vim-powerline'
 
 " let g:Powerline_theme = 'skwp'
 " let g:Powerline_theme = 'solarized256'
 " let g:Powerline_colorscheme = 'skwp'
-let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
+:let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
 " let g:Powerline_stl_path_style = 'filename'  " default 'relative'
-let g:Powerline_cache_enabled = 0
-let g:Powerline_mode_n = ' N '
+:let g:Powerline_cache_enabled = 0
+:let g:Powerline_mode_n = ' N '
 " let g:Powerline_mode_i = 'Insert'
 " set guifont=Ricty_for_Powerline:h16
-set guifontwide=Ricty:h16
+:set guifontwide=Ricty:h16
 
 """"""""""""""""""""""""""""""""
 
@@ -231,16 +223,22 @@ NeoBundle 'xmledit'
 
 """" recent opened file
 NeoBundle 'mru.vim'
+" :let MRU_File = $HOME . '/.vim/vim_mru_files'
+
 NeoBundle 'thinca/vim-poslist'
 
 """" markdown
 NeoBundle 'plasticboy/vim-markdown'
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
-NeoBundle 'YankRing.vim'
-let g:yankring_max_history = 50
-let g:yankring_replace_n_pkey = '<m-p>'
-noremap <C-S-p> :YRSearch<CR>
+NeoBundle 'zaiste/tmux.vim'
+
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'kien/ctrlp.vim'
+" NeoBundle 'YankRing.vim'
+" :let g:yankring_max_history = 50
+" :let g:yankring_replace_n_pkey = '<m-p>'
+" noremap <C-S-p> :YRSearch<CR>
 "noremap <C-S-u> :YRShow<CR>
 
 NeoBundle 'thinca/vim-fontzoom'
@@ -251,12 +249,13 @@ NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vimfiler.git'
 
 NeoBundle 'thinca/vim-quickrun'
-source ~/.vim/config/quickrun.vim
+:source ~/.vim/config/quickrun.vim
 
 "" grepの拡張
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
+NeoBundle 'thinca/vim-qfreplace'
 "" 設定: config/ffixhown-config.vim
 
 NeoBundle 'rking/ag.vim'
@@ -264,22 +263,34 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'mattn/zencoding-vim'
-" TODO: replace zencoding-vim
-" NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
+
 NeoBundle 'kchmck/vim-coffee-script'
+" vimにcoffeeファイルタイプを認識させる
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" インデントを設定
+autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+
 NeoBundle 'tpope/vim-haml'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'tell-k/vim-browsereload-mac'
 
 "" tool 群
 NeoBundle 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=1
+:let g:indent_guides_enable_on_vim_startup=1
+:let g:indent_guides_guide_size=1
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 
+NeoBundle 'osyo-manga/vim-over'
+:let g:over_command_line_prompt = "Over Command> "
+" カーソル下の単語をハイライト付きで置換
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+
 NeoBundle 'AndrewRadev/switch.vim'
-let g:switch_custom_definitions =
+:let g:switch_custom_definitions =
       \ [
       \   ["unless", "if"],
       \   ["and", "or"],
@@ -295,6 +306,9 @@ let g:switch_custom_definitions =
       \   { 'expect(([^. ]+)).to(_not|)': '\1.should\2' },
       \ ]
 
+NeoBundle 'syui/wauto.vim'
+let g:auto_write = 1
+
 filetype plugin indent on
 
 " Installation check.
@@ -303,3 +317,7 @@ filetype plugin indent on
 "         \ string(neobundle#get_not_installed_bundle_names())
 "   echomsg 'Please execute ":NeoBundleInstall" command.'
 " endif
+
+
+" Installation check.
+NeoBundleCheck

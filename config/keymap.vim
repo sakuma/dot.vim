@@ -43,6 +43,15 @@ imap <C-n> <Down>
 imap <C-a> <home>
 imap <C-e> <end>
 
+"カーソルを表示行で移動する。
+nnoremap j gj
+nnoremap k gk
+" nnoremap <Down> gj
+" nnoremap <Up>   gk"
+" 逆に普通の行単位で移動したい時のために逆の map も設定しておく
+nnoremap gj j
+nnoremap gk k"
+
 " Ctrl-s で保存
 " 保存後ノーマルモードに戻る
 imap <script> <C-s> <SID>(gui-save)<Esc>
@@ -50,11 +59,19 @@ nmap <script> <C-s> <SID>(gui-save)
 imap <script> <SID>(gui-save) <C-o><SID>(gui-save)
 nnoremap      <SID>(gui-save) :<C-u>call <SID>gui_save()<CR>
 function! s:gui_save()
-    if bufname('%') ==# ''
-        browse confirm saveas
-    else
-        update
-    endif
+  let cursor = getpos(".")
+  " 行末の空白を除去する
+  %s/\s\+$//ge
+  " tabを2スペースに変換する
+  %s/\t/  /ge
+  call setpos(".", cursor)
+  unlet cursor
+
+  if bufname('%') ==# ''
+    browse confirm saveas
+  else
+    update
+  endif
 endfunction
 
 " CTRL-hjklでウィンドウ移動

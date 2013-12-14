@@ -84,11 +84,6 @@ set mouse=a " マウス機能有効化
 " 常に開いているファイルと同じディレクトリをカレントディレクトリにする
 " au BufEnter * execute ":lcd " . expand("%:p:h")
 
-" 保存時に行末の空白削除
-autocmd BufWritePre * :%s/\s\+$//ge
-" 保存時にtabをスペースに変換する
-autocmd BufWritePre * :%s/\t/ /ge
-
 " 余計なVimエディタが起動しないようにする
 runtime macros/editexisting.vim
 
@@ -138,6 +133,8 @@ if has('gui_macvim')
     set guifontwide=RictyDiscord-Regular:h16
     " set guifont=Monaco:h14
     " set guifont=Ricty:h18
+else
+  source ~/.vim/config/tabpage.vim
 endif
 
 " if has("gui_running")
