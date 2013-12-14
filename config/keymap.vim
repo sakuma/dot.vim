@@ -34,14 +34,15 @@ noremap : ;
 
 imap <C-@> <C-[>
 
+inoremap , ,<Space>
 
 " 移動系: Emacs風
-imap <C-b> <Left>
-imap <C-f> <Right>
-imap <C-n> <Down>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+" imap <C-n> <Down>
 " imap <C-p> <UP>
-imap <C-a> <home>
-imap <C-e> <end>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 
 "カーソルを表示行で移動する。
 nnoremap j gj
@@ -112,18 +113,11 @@ nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 ""  補完
 ""
 
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
 vnoremap { "zdi{<C-R>z}<ESC>
 vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
-" vnoremap - "zdi<% <C-R>z -%><ESC>
-" vnoremap % "zdi<%= <C-R>z %><ESC>
 
 " ctrl+tab, ctrl+shift+tab でタブ切り替え
 nnoremap <C-Tab>   gt
@@ -171,7 +165,3 @@ nnoremap ! :Switch<CR>
 " Tab : Tab
 " Meta : M
 " Enter : <CR>
-"
-"
-
-
