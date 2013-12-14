@@ -21,7 +21,7 @@ nnoremap <leader>b :<C-u>Unite buffer<CR>
 " cnoremap ub :<C-u>Unite buffer -buffer-name=buffer<CR>
 
 " ファイル一覧
-nnoremap <leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <leader>f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " cnoremap ue :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
 "file current_dir
