@@ -283,6 +283,7 @@ NeoBundle 'osyo-manga/vim-over'
 nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
 nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 
+NeoBundle 'kana/vim-smartinput'
 NeoBundle 'AndrewRadev/switch.vim'
 :let g:switch_custom_definitions =
       \ [
