@@ -76,6 +76,13 @@ set shiftwidth=2 "シフト移動幅
 set smarttab "行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set tabstop=2 "ファイル内の <Tab> が対応する空白の数
 set whichwrap=b,s,h,l,<,>,[,] "カーソルを行頭、行末で止まらないようにする
+set nocompatible   " Disable vi-compatibility
+set whichwrap=b,s,h,l,<,>,[,] "カーソルを行頭，行末で止まらないようにする
+"BSで削除できるものを指定する
+" indent  : 行頭の空白
+" eol     : 改行
+" start   : 挿入モード開始位置より手前の文字
+set backspace=indent,eol,start
 
 "検索をファイルの先頭へループしない
 "set nowrapscan
