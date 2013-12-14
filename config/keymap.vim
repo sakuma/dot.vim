@@ -59,11 +59,19 @@ nmap <script> <C-s> <SID>(gui-save)
 imap <script> <SID>(gui-save) <C-o><SID>(gui-save)
 nnoremap      <SID>(gui-save) :<C-u>call <SID>gui_save()<CR>
 function! s:gui_save()
-    if bufname('%') ==# ''
-        browse confirm saveas
-    else
-        update
-    endif
+  let cursor = getpos(".")
+  " 行末の空白を除去する
+  %s/\s\+$//ge
+  " tabを2スペースに変換する
+  %s/\t/  /ge
+  call setpos(".", cursor)
+  unlet cursor
+
+  if bufname('%') ==# ''
+    browse confirm saveas
+  else
+    update
+  endif
 endfunction
 
 " CTRL-hjklでウィンドウ移動
