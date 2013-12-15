@@ -45,10 +45,22 @@ endif
 NeoBundle 'scrooloose/syntastic'
 
 """ Ruby 関連
-NeoBundle 'ruby.vim'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-endwise'
 :source $VIMRUNTIME/macros/matchit.vim
 NeoBundle 'ruby-matchit'
+" Rails
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-rake'
+" NeoBundle 'taichouchou2/vim-rails'
+" NeoBundle 'romanvbabenko/rails.vim'
+NeoBundle 'ujihisa/unite-rake'
+" NeoBundle 'basyura/unite-rails' " original
+NeoBundle 'n-sakuma/unite-rails'  " custom
+
+:source ~/.vim/config/ruby.vim
+
 
 """ Scala
 NeoBundle 'derekwyatt/vim-scala'
@@ -75,17 +87,6 @@ endif
 " ブロック選択
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 
-" Railsサポート
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-rake'
-" NeoBundle 'taichouchou2/vim-rails'
-" NeoBundle 'romanvbabenko/rails.vim'
-NeoBundle 'ujihisa/unite-rake'
-" NeoBundle 'basyura/unite-rails' " original
-NeoBundle 'n-sakuma/unite-rails'  " custom
-
-:source ~/.vim/config/ruby.vim
 
 """
 " Git plugins
