@@ -145,8 +145,8 @@ nnoremap <C-S-Tab> gT
 
 
 "ノーマルモード: Enterで一行挿入
-map <S-Enter> O<ESC>
-map <Enter> o<ESC>
+noremap <S-Enter> O<ESC>
+noremap <Enter> o<ESC>
 
 " visualモードで選択して「Ctrl-p」で貼り付け
 vnoremap <silent> <C-p> "0p<CR>
