@@ -83,3 +83,17 @@ let g:gitgutter_enabled = 0
 "
 "   :Extradite
 "
+
+"""""""""""""
+"  vim-signify
+
+let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
+
+" 次の差分箇所に移動
+nmap <Leader>gj <Plug>(signify-next-hunk)zz
+" 前の差分箇所に移動
+nmap <Leader>gk <Plug>(signify-prev-hunk)zz
+" 差分箇所をハイライト
+nmap <Leader>gh <Plug>(signify-toggle-highlight)
+" 差分表示をトグルする(:SignifyToggleコマンドと同じ)
+nmap <Leader>gt <Plug>(signify-toggle)

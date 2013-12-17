@@ -95,6 +95,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite.git'
+NeoBundle 'mhinz/vim-signify'
 " see other conf
 
 
