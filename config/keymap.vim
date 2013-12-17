@@ -151,9 +151,6 @@ noremap <Enter> o<ESC>
 " visualモードで選択して「Ctrl-p」で貼り付け
 vnoremap <silent> <C-p> "0p<CR>
 
-" toggle word
-nnoremap ! :Switch<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 参考)
 "   http://sites.google.com/site/vimdocja/map-html#key-mapping
