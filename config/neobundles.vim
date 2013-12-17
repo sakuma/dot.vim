@@ -149,6 +149,7 @@ NeoBundle 'Gundo'
 NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'mattn/calendar-vim'
+NeoBundle 'mhinz/vim-startify'
 
 " open browser
 "   more ... :help open-browser
