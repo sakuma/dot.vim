@@ -201,18 +201,9 @@ NeoBundle 'vim-scripts/Colour-Sampler-Pack'
 NeoBundle 'w0ng/vim-hybrid'
 " see other conf
 
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'itchyny/lightline.vim'
+" see conf lightline.vim
 
-" let g:Powerline_theme = 'skwp'
-" let g:Powerline_theme = 'solarized256'
-" let g:Powerline_colorscheme = 'skwp'
-:let g:Powerline_symbols = 'fancy'  " or 'compatible'(default), 'unicode'
-" let g:Powerline_stl_path_style = 'filename'  " default 'relative'
-:let g:Powerline_cache_enabled = 0
-:let g:Powerline_mode_n = ' N '
-" let g:Powerline_mode_i = 'Insert'
-" set guifont=Ricty_for_Powerline:h16
-:set guifontwide=Ricty:h16
 
 """"""""""""""""""""""""""""""""
 
