@@ -252,8 +252,9 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
+NeoBundle 'othree/html5.vim'
+NeoBundle 'othree/html5-syntax.vim'
+NeoBundle 'pangloss/vim-javascript'
 
 NeoBundle 'kchmck/vim-coffee-script'
 " vimにcoffeeファイルタイプを認識させる
