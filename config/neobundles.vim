@@ -39,6 +39,7 @@ NeoBundle 'Shougo/vimproc', {
 
 if version >= 702
   NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'alpaca-tc/vim-unite-giti'
   source ~/.vim/config/unite.vim
 endif
 
