@@ -213,7 +213,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'xmledit'
 
 """" recent opened file
-NeoBundle 'mru.vim'
+" NeoBundle 'mru.vim'
+NeoBundle 'Shougo/neomru.vim'
 " :let MRU_File = $HOME . '/.vim/vim_mru_files'
 
 NeoBundle 'thinca/vim-poslist'
