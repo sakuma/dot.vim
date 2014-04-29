@@ -52,6 +52,7 @@ if version >= 702
 endif
 
 NeoBundle 'scrooloose/syntastic'
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 """ Ruby 関連
 NeoBundle 'vim-ruby/vim-ruby'
@@ -265,6 +266,18 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'othree/html5-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'angularjs,backbone,underscore'
+" jQuery: jquery
+" underscore.js: underscore
+" Lo-Dash: underscore
+" Backbone.js: backbone
+" prelude.ls: prelude
+" AngularJS: angularjs
+" AngularUI: angularui
+" RequireJS: requirejs
+" Sugar.js: sugar
+" Jasmine: jasmine
 
 NeoBundle 'kchmck/vim-coffee-script'
 " vimにcoffeeファイルタイプを認識させる
