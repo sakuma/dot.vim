@@ -54,6 +54,27 @@ endif
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
+" --- js config ---
+" $ npm install -g jshint
+" -----
+"  write ~/.jshintrc
+" -----
+" {
+"   "strict"    : true,
+"   "indent"    : 4,
+"   "camelcase" : true,
+"   "unused"    : true,
+"   "eqeqeq"    : true,
+"   "undef"     : true,
+"   "browser"   : true,
+"   "jquery"    : true,
+"   "devel"     : true
+" }
+let g:syntastic_mode_map = {
+  \ "mode" : "active",
+  \ "active_filetypes" : ["javascript", "json"],
+  \}
+
 """ Ruby 関連
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-endwise'
