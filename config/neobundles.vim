@@ -29,11 +29,9 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 """
 " golang
-if $GOROOT != ''
-  set rtp+=$GOROOT/misc/vim
-endif
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menu,preview
+NeoBundle 'fatih/vim-go'
+" NeoBundle 'jnwhiteh/vim-golang'   " 公式
+let g:go_snippet_engine = "neosnippet"  "default ultisnips
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
