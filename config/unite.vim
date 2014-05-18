@@ -21,7 +21,7 @@ nnoremap <leader>b :<C-u>Unite buffer<CR>
 " cnoremap ub :<C-u>Unite buffer -buffer-name=buffer<CR>
 
 " ファイル一覧
-nnoremap <leader>f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <leader>f :<C-u>UniteWithBufferDir file file/new -buffer-name=file<CR>
 " cnoremap ue :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
 "file current_dir
@@ -36,4 +36,3 @@ nnoremap <leader>f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
-
