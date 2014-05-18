@@ -149,6 +149,7 @@ if version >= 702
   :source ~/.vim/config/neocomplete.vim
 
   NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundle 'honza/vim-snippets'
   :source ~/.vim/config/snippet.vim
 
