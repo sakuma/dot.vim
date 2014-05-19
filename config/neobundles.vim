@@ -43,6 +43,8 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 
+NeoBundle 'tpope/vim-pathogen'
+
 if version >= 702
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'alpaca-tc/vim-unite-giti'
@@ -141,6 +143,19 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'scrooloose/nerdtree'
 :nnoremap <F3> :NERDTreeToggle<CR>
 :let NERDTreeShowHidden = 1
+
+NeoBundle 'majutsushi/tagbar'
+nnoremap <F4> :TagbarToggle<CR>
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+    \ }
 
 NeoBundle 'tomtom/tcomment_vim'
 
