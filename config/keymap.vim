@@ -113,6 +113,11 @@ nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 ""  補完
 ""
 
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
+" ビジュアルモードで選択した文字列を囲む
 vnoremap { "zdi{<C-R>z}<ESC>
 vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
