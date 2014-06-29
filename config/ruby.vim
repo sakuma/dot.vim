@@ -44,7 +44,9 @@ noremap <Leader>rc :<C-u>Unite rails/controller<CR>
 noremap <Leader>rf :<C-u>Unite rails/config<CR>
 noremap <Leader>rm :<C-u>Unite rails/model<CR>
 noremap <Leader>rv :<C-u>Unite rails/view<CR>
+noremap <Leader>rj :<C-u>Unite rails/javascript<CR>
+noremap <Leader>rst :<C-u>Unite rails/stylesheet<CR>
 noremap <Leader>rl :<C-u>Unite rails/lib<CR>
-noremap <Leader>rh :<C-u>Unite rails/helper<CR>""
+noremap <Leader>rh :<C-u>Unite rails/helper<CR>
 noremap <Leader>rs :<C-u>Unite rails/spec<CR>
 noremap <Leader>rd :<C-u>Unite rails/db<CR>
