@@ -11,21 +11,10 @@
 
 > git clone git@github.com:n-sakuma/dot.vim.git ~/.vim
 
-# セットアップ
-
-> ~/.vim/setup.sh
-
-# Plugin の設定 - NeoBundle管理のplugin をインストール
-
 ## インストール
 
-> :NeoBundleInstall
+> ~/.vim/vimconf_ctl install
 
-## 更新
+# update
 
-> :NeoBundleUpdate
-
-## 一覧
-
-> :NeoBundleList
-
+> ~/.vim/vimconf_ctl update
