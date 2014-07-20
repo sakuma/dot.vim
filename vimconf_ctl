@@ -29,13 +29,13 @@ EOS
 
 function update_vim_conf() {
   local vim_dir=$HOME/.vim
-  # local vim_dir=/tmp/.vim
   cd $vim_dir
   result=$(git status)
-  remote_status=$(echo $result | grep "Your branch is up-to-date with 'origin/master'.")
   commit_status=$(echo $result | grep 'nothing to commit, working directory clean')
-  # if [ ( -n "$remote_status" ) && ( -n "commit_status" ) ]; then
-  if [ -n "$remote_status" ] && [ -n "$commit_status" ]; then
+  if [ -n "$remote_status" ]; then
+    echo "Warning: Not the latest version."
+  fi
+  if [ -n "$commit_status" ]; then
     git pull origin master
     if [ -n $? ]; then
       $vim_dir/bundle/neobundle.vim/bin/neoinstall
@@ -60,4 +60,4 @@ case "$1" in
     echo "'install' or 'update'"
 esac
 
-# /* vim: set filetype=bash : */
+# /* vim: set filetype=sh : */
