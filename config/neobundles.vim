@@ -282,7 +282,7 @@ NeoBundle 'MultipleSearch'
 NeoBundle 'csv.vim'
 
 NeoBundle 'Shougo/vimshell.git'
-NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'  " see other conf
 
 "" grepの拡張
