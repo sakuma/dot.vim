@@ -124,6 +124,7 @@ NeoBundle 'nelstrom/vim-textobj-rubyblock'
 "
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'cohama/agit.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite.git'
 NeoBundle 'mhinz/vim-signify'
