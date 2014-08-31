@@ -18,23 +18,32 @@
 " NeoBundle 'git://git.wincent.com/command-t.git'
 """""""""""""""""""""""""""""""""""""""
 
-:set nocompatible "Vi互換をオフ
 filetype off
 
 if has('vim_starting')
-  " set runtimepath+=~/.vim/neobundle.vim
+  set nocompatible "Vi互換をオフ
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+
+if !filereadable(neobundle_readme)
+  echo "Installing NeoBundle..."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
+endif
+
 call neobundle#rc(expand('~/.vim/bundle/'))
+" call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 """
 " golang
 NeoBundle 'fatih/vim-go'
 " NeoBundle 'jnwhiteh/vim-golang'   " 公式
 let g:go_snippet_engine = "neosnippet"  "default ultisnips
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -351,14 +360,6 @@ endfor
 
 
 filetype plugin indent on
-
-" Installation check.
-" if neobundle#exists_not_installed_bundles()
-"   echomsg 'Not installed bundles : ' .
-"         \ string(neobundle#get_not_installed_bundle_names())
-"   echomsg 'Please execute ":NeoBundleInstall" command.'
-" endif
-
 
 " Installation check.
 NeoBundleCheck
