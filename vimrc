@@ -10,6 +10,7 @@ set cursorline " カーソルラインの強調表示を有効化
 " highlight Normal ctermbg=black ctermfg=grey
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
 highlight cursorline term=reverse cterm=reverse
+" highlight BadWhitespace ctermbg=red guibg=red
 
 " 背景白向け
 " highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray

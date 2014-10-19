@@ -264,6 +264,7 @@ endif
 
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Colour-Sampler-Pack'
+NeoBundle 'chriskempson/vim-tomorrow-theme'   " for Ruby
 NeoBundle 'w0ng/vim-hybrid'
 " see other conf
 
@@ -297,6 +298,9 @@ NeoBundle 'kien/ctrlp.vim'
 " :let g:yankring_replace_n_pkey = '<m-p>'
 " noremap <C-S-p> :YRSearch<CR>
 "noremap <C-S-u> :YRShow<CR>
+
+" Evernote
+" NeoBundle 'kakkyz81/evervim'
 
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'MultipleSearch'
@@ -370,6 +374,7 @@ for f in split(glob('~/.vim/config/neobundle/*.vim'), '\n')
 endfor
 
 
+" call neobundle#end()
 filetype plugin indent on
 
 " Installation check.
