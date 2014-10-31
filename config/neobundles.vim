@@ -33,8 +33,7 @@ if !filereadable(neobundle_readme)
   silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-" call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -368,13 +367,13 @@ let g:auto_write = 1
 NeoBundle 'gmarik/sudo-gui.vim'
 " NeoBundle 'thinca/vim-localrc'
 
+call neobundle#end()
+
 " ~/.vim/config/neobundle 配下のファイルを読み込む
 for f in split(glob('~/.vim/config/neobundle/*.vim'), '\n')
   exe 'source' f
 endfor
 
-
-" call neobundle#end()
 filetype plugin indent on
 
 " Installation check.
