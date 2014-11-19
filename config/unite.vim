@@ -32,6 +32,8 @@ nnoremap <leader>f :<C-u>UniteWithBufferDir file file/new -buffer-name=file<CR>
 "noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 "noremap :uffr :<C-u>UniteWithBufferDir file_rec -buffer-name=file_rec<CR>
 
+" .git以下の絞込
+nnoremap <leader>ug :<C-u>Unite file_rec/async:!<CR>
 
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
