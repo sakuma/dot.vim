@@ -114,8 +114,13 @@ NeoBundle 'fatih/vim-go'
 let g:go_snippet_engine = "neosnippet"  "default ultisnips
 autocmd FileType go autocmd BufWritePre <buffer> GoImports
 
-""" Scala
+"""
+" Scala
 NeoBundle 'derekwyatt/vim-scala'
+
+"""
+" Elixir
+NeoBundle 'elixir-lang/vim-elixir'
 
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'Lokaltog/vim-easymotion'
