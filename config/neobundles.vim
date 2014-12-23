@@ -21,7 +21,9 @@
 filetype off
 
 if has('vim_starting')
-  set nocompatible "Vi互換をオフ
+  if &compatible
+     set nocompatible               " Be iMproved
+   endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
@@ -109,10 +111,6 @@ endfunction
 " golang
 NeoBundle 'fatih/vim-go'
 " NeoBundle 'jnwhiteh/vim-golang'   " 公式
-if has('gui_macvim')
-  " macvimだとvim-go の ftdetect/gofiletype.vimがなぜか効かない
-  au BufRead,BufNewFile,BufReadPre *.go set filetype=go
-endif
 let g:go_snippet_engine = "neosnippet"  "default ultisnips
 autocmd FileType go autocmd BufWritePre <buffer> GoImports
 
@@ -134,10 +132,6 @@ hi EasyMotionShade  ctermbg=none ctermfg=blue
 " }}}
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kana/vim-textobj-user'
-:set nocompatible
-if has("autocmd")
-  filetype indent plugin on
-endif
 
 " ブロック選択
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
@@ -374,12 +368,12 @@ NeoBundle 'gmarik/sudo-gui.vim'
 
 call neobundle#end()
 
+filetype plugin indent on
+
 " ~/.vim/config/neobundle 配下のファイルを読み込む
 for f in split(glob('~/.vim/config/neobundle/*.vim'), '\n')
   exe 'source' f
 endfor
-
-filetype plugin indent on
 
 " Installation check.
 NeoBundleCheck
