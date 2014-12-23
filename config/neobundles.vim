@@ -38,12 +38,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"""
-" golang
-NeoBundle 'fatih/vim-go'
-" NeoBundle 'jnwhiteh/vim-golang'   " 公式
-let g:go_snippet_engine = "neosnippet"  "default ultisnips
-
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'mac' : 'make -f make_mac.mak',
@@ -111,6 +105,16 @@ endfunction
 
 :source ~/.vim/config/ruby.vim
 
+"""
+" golang
+NeoBundle 'fatih/vim-go'
+" NeoBundle 'jnwhiteh/vim-golang'   " 公式
+if has('gui_macvim')
+  " macvimだとvim-go の ftdetect/gofiletype.vimがなぜか効かない
+  au BufRead,BufNewFile,BufReadPre *.go set filetype=go
+endif
+let g:go_snippet_engine = "neosnippet"  "default ultisnips
+autocmd FileType go autocmd BufWritePre <buffer> GoImports
 
 """ Scala
 NeoBundle 'derekwyatt/vim-scala'
@@ -134,6 +138,7 @@ NeoBundle 'kana/vim-textobj-user'
 if has("autocmd")
   filetype indent plugin on
 endif
+
 " ブロック選択
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 
