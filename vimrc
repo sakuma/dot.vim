@@ -136,10 +136,10 @@ nnoremap <silent> <Space>cd :<C-u>CD<CR>
 if has('gui_macvim')
     set showtabline=2 " タブを常に表示
     set imdisable " IMを無効化
-    set transparency=15 " 透明度を指定
+    set transparency=2 " 透明度を指定
     set antialias
     set guifont=RictyDiscord-Regular:h16
-    set guifontwide=RictyDiscord-Regular:h16
+    " set guifontwide=RictyDiscord-Regular:h16
     " set guifont=Monaco:h14
     " set guifont=Ricty:h18
 else
