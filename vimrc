@@ -114,6 +114,7 @@ set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
 
 set nofoldenable
+set colorcolumn=80
 
 " current directory setting
 command! -nargs=? -complete=dir -bang CD  call s:ChangeCurrentDir('<args>', '<bang>')
