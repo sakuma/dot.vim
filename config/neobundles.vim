@@ -121,6 +121,7 @@ NeoBundle 'derekwyatt/vim-scala'
 """
 " Elixir
 NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'mattreduce/vim-mix'
 
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'Lokaltog/vim-easymotion'
