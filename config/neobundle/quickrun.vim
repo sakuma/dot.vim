@@ -5,16 +5,11 @@
 set splitright
 
 let g:quickrun_config = {
-      \    'markdown': {
-      \      'outputter' : 'null',
-      \      'command'   : 'open',
-      \      'cmdopt'    : '-a',
-      \      'args'      : 'Marked',
-      \      'exec'      : '%c %o %a %s',
-      \    },
-      \
       \    'go': {
       \       'command': 'go',
       \       'cmdopt': 'run',
       \    }
       \ }
+
+" vim-marked mapping
+autocmd FileType mkd nnoremap <Leader>r :MarkedOpen<CR>

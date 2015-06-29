@@ -292,6 +292,8 @@ NeoBundle 'thinca/vim-poslist'
 """" markdown
 NeoBundle 'plasticboy/vim-markdown'
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+NeoBundle 'itspriddle/vim-marked'
+" let g:marked_app = "Marked"  ->Default: Marked2
 
 NeoBundle 'zaiste/tmux.vim'
 
