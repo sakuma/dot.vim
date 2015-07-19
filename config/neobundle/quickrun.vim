@@ -12,4 +12,4 @@ let g:quickrun_config = {
       \ }
 
 " vim-marked mapping
-autocmd FileType mkd nnoremap <Leader>r :MarkedOpen<CR>
+" autocmd FileType mkd nnoremap <Leader>r :MarkedOpen<CR>
