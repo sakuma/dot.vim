@@ -28,9 +28,10 @@ noremap <C-c><C-c> <C-c>
 noremap <C-x><C-x>e :edit $HOME/.vim/vimrc<CR>
 noremap <C-x><C-x> :source $HOME/.vimrc<CR>
 
+" NOTE: karabinerでremapする
 " ノーマルモードで ;と:を入れ替え
-noremap ; :
-noremap : ;
+" noremap ; :
+" noremap : ;
 
 imap <C-@> <C-[>
 
