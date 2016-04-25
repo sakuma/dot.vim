@@ -4,7 +4,22 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 
-let g:ruby_fold = 1
+" 重い時対策
+" let g:ruby_path = ""
+"
+" let g:ruby_fold = 1
+
+set foldenable
+set foldmethod=manual
+
+autocmd InsertEnter * if !exists('w:last_fdm')
+            \| let w:last_fdm=&foldmethod
+            \| setlocal foldmethod=manual
+            \| endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm')
+            \| let &l:foldmethod=w:last_fdm
+            \| unlet w:last_fdm
+            \| endif
 
 " rails.vim
 let g:rails_level=4
