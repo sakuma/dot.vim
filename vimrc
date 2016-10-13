@@ -94,7 +94,7 @@ set mouse=a " マウス機能有効化
 " au BufEnter * execute ":lcd " . expand("%:p:h")
 
 " 余計なVimエディタが起動しないようにする
-runtime macros/editexisting.vim
+" runtime macros/editexisting.vim
 
 " 文字のないところにもカーソルを移動できる
 " all   : all mode (normal, insert, ...)
@@ -159,7 +159,8 @@ endif
 " vundle
 ":source ~/.vim/config/bundles.vim
 " neobundle
-source ~/.vim/config/neobundles.vim
+" source ~/.vim/config/neobundles.vim
+source ~/.vim/config/dein.vim
 
 " calendar
 source ~/.vim/config/qfixhown-config.vim

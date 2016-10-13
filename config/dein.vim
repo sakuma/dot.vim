@@ -135,7 +135,6 @@ call dein#add('xmledit')
 call dein#add('Shougo/neomru.vim')
 call dein#add('thinca/vim-poslist')
 call dein#add('plasticboy/vim-markdown')
-autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 call dein#add('itspriddle/vim-marked')
 call dein#add('zaiste/tmux.vim')
 call dein#add('LeafCage/yankround.vim')
@@ -160,7 +159,6 @@ call dein#add('othree/html5-syntax.vim')
 call dein#add('pangloss/vim-javascript')
 call dein#add('othree/javascript-libraries-syntax.vim')
 call dein#add('kchmck/vim-coffee-script')
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 call dein#add('tpope/vim-haml')
