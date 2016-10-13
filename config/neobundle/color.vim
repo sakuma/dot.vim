@@ -1,4 +1,4 @@
-syntax on
+" syntax on
 
 set background=dark
 
