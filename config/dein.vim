@@ -66,36 +66,42 @@ call dein#add('fatih/vim-go')
 let g:go_snippet_engine = "neosnippet"  "default ultisnips
 " autocmd FileType go autocmd BufWritePre <buffer> GoImports
 " au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>rn <Plug>(go-rename)
+" au FileType go nmap <leader>gb <Plug>(go-build)
+" au FileType go nmap <leader>gt <Plug>(go-test)
+" au FileType go nmap <leader>gc <Plug>(go-coverage)
+" au FileType go nmap <Leader>gd <Plug>(go-doc)
+" au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+" au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+" au FileType go nmap <Leader>gs <Plug>(go-implements)
+" au FileType go nmap <Leader>rn <Plug>(go-rename)
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_types = 1
 let g:go_fmt_command = "goimports"
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:syntastic_go_checkers = ['go', 'golint']
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['go'] }
 set completeopt=menu,preview
 
 call dein#add('elixir-lang/vim-elixir')
 call dein#add('mattreduce/vim-mix')
 call dein#add('thinca/vim-visualstar')
-" call dein#add('Lokaltog/vim-easymotion')
-" " ホームポジションに近いキーを使う
-" :let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
-" " <Leader> + e + (w, k, ...)
-" :let g:EasyMotion_leader_key="e"
-" " 1 ストローク選択を優先する
-" :let g:EasyMotion_grouping=1
-" " カラー設定変更
+call dein#add('easymotion/vim-easymotion')
+" ホームポジションに近いキーを使う
+:let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" <Leader> + e + (w, k, ...)
+:let g:EasyMotion_leader_key="e"
+" 1 ストローク選択を優先する
+:let g:EasyMotion_grouping=1
+" カラー設定変更
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 call dein#add('t9md/vim-textmanip')
@@ -135,6 +141,7 @@ call dein#add('xmledit')
 call dein#add('Shougo/neomru.vim')
 call dein#add('thinca/vim-poslist')
 call dein#add('plasticboy/vim-markdown')
+let g:vim_markdown_folding_disabled = 1
 call dein#add('itspriddle/vim-marked')
 call dein#add('zaiste/tmux.vim')
 call dein#add('LeafCage/yankround.vim')
@@ -166,8 +173,8 @@ call dein#add('slim-template/vim-slim')
 call dein#add('mattn/webapi-vim')
 call dein#add('tell-k/vim-browsereload-mac')
 call dein#add('nathanaelkane/vim-indent-guides')
-" :let g:indent_guides_enable_on_vim_startup=1
-" :let g:indent_guides_guide_size=1
+:let g:indent_guides_enable_on_vim_startup=1
+:let g:indent_guides_guide_size=1
 call dein#add('vim-scripts/AnsiEsc.vim')
 call dein#add('osyo-manga/vim-over')
 :let g:over_command_line_prompt = "Over Command> "
@@ -177,8 +184,8 @@ nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!
 
 call dein#add('kana/vim-smartinput')
 call dein#add('AndrewRadev/switch.vim')
-call dein#add('syui/wauto.vim')
-let g:auto_write = 1
+" call dein#add('syui/wauto.vim')
+" let g:auto_write = 1
 call dein#add('gmarik/sudo-gui.vim')
 
 " You can specify revision/branch/tag.
