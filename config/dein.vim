@@ -30,7 +30,19 @@ source ~/.vim/config/snippet.vim
 call dein#add('Shougo/context_filetype.vim')
 call dein#add('thinca/vim-ref')
 call dein#add('scrooloose/syntastic')
+" call dein#add('mtscout6/syntastic-local-eslint.vim')
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+ " エラー行に sign を表示
+let g:syntastic_enable_signs = 1
+" location list を常に更新
+let g:syntastic_always_populate_loc_list = 0
+" location list を常に表示
+let g:syntastic_auto_loc_list = 0
+" ファイルを開いた時にチェックを実行する
+let g:syntastic_check_on_open = 1
+" :wq で終了する時もチェックする
+let g:syntastic_check_on_wq = 0
+
 call dein#add('tpope/vim-surround')
 call dein#add('mhinz/vim-startify')
 call dein#add('vim-ruby/vim-ruby')

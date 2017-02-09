@@ -46,7 +46,7 @@ vnoremap <leader>gv :Gitv! --all<CR>
 
 
 "" default on
-let g:gitgutter_enabled = 0
+" let g:gitgutter_enabled = 0
 "" default off
 " let g:gitgutter_highlight_lines = 1
 
