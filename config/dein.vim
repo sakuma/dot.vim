@@ -7,6 +7,8 @@ endif
 set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
+
+" if dein#load_state('~/.vim/dein')
 call dein#begin(expand('~/.vim/dein'))
 
 " Let dein manage dein
@@ -17,7 +19,7 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 " call dein#add('Shougo/vimproc')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+" call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/unite.vim')
 call dein#add('alpaca-tc/vim-unite-giti')
 source ~/.vim/config/unite.vim
@@ -52,7 +54,7 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 call dein#add('tpope/vim-endwise')
 :source $VIMRUNTIME/macros/matchit.vim
-call dein#add('Gundo')
+call dein#add('vim-scripts/Gundo')
 :nnoremap <F5> :GundoToggle<CR>
 call dein#add('godlygeek/tabular')
 " tabular config {{{
@@ -65,7 +67,7 @@ if exists(":Tabularize")
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 " call dein#add('')
-call dein#add('ruby-matchit')
+call dein#add('vim-scripts/ruby-matchit')
 call dein#add('tpope/vim-rails')
 call dein#add('tpope/vim-bundler')
 call dein#add('tpope/vim-rake')
@@ -102,7 +104,8 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 let g:syntastic_go_checkers = ['go', 'golint']
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['go'] }
 set completeopt=menu,preview
-
+call dein#add('hashivim/vim-terraform')
+let g:terraform_fmt_on_save = 1
 call dein#add('elixir-lang/vim-elixir')
 call dein#add('mattreduce/vim-mix')
 call dein#add('thinca/vim-visualstar')
@@ -144,12 +147,18 @@ call dein#add('tomasr/molokai')
 let g:molokai_original = 1
 let g:rehash256 = 1
 
+call dein#add('rust-lang/rust.vim')
+let g:rustfmt_autosave = 1
+set hidden
+call dein#add('racer-rust/vim-racer')
+let g:racer_cmd = "~/.cargo/bin/racer"
+
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('vim-scripts/Colour-Sampler-Pack')
 call dein#add('chriskempson/vim-tomorrow-theme')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('itchyny/lightline.vim')
-call dein#add('xmledit')
+call dein#add('vim-scripts/xmledit')
 call dein#add('Shougo/neomru.vim')
 call dein#add('thinca/vim-poslist')
 call dein#add('plasticboy/vim-markdown')
@@ -159,8 +168,8 @@ call dein#add('zaiste/tmux.vim')
 call dein#add('LeafCage/yankround.vim')
 call dein#add('kien/ctrlp.vim')
 call dein#add('thinca/vim-fontzoom')
-call dein#add('MultipleSearch')
-call dein#add('csv.vim')
+call dein#add('vim-scripts/MultipleSearch')
+call dein#add('vim-scripts/csv.vim')
 call dein#add('Shougo/vimshell.git')
 call dein#add('Shougo/vimfiler')
 call dein#add('thinca/vim-quickrun')
@@ -177,9 +186,13 @@ call dein#add('othree/html5.vim')
 call dein#add('othree/html5-syntax.vim')
 call dein#add('pangloss/vim-javascript')
 call dein#add('othree/javascript-libraries-syntax.vim')
+call dein#add('MaxMEllon/vim-jsx-pretty')
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 call dein#add('kchmck/vim-coffee-script')
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+call dein#add('leafgarland/typescript-vim')
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 call dein#add('tpope/vim-haml')
 call dein#add('slim-template/vim-slim')
 call dein#add('mattn/webapi-vim')
@@ -203,15 +216,16 @@ call dein#add('gmarik/sudo-gui.vim')
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-" Required:
 call dein#end()
+" call dein#save_state()
+" endif
 
 " Required:
 filetype plugin indent on
 
-if dein#check_install(['vimproc'])
-  call dein#install(['vimproc'])
-endif
+" if dein#check_install(['vimproc'])
+"   call dein#install(['Shougo/vimproc.vim'])
+" endif
 " If you want to install not installed plugins on startup.
 if dein#check_install()
  call dein#install()

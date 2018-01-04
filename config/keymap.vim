@@ -93,6 +93,9 @@ if has('gui_macvim')
   xmap <C-k> <Plug>(textmanip-move-up)
   xmap <C-h> <Plug>(textmanip-move-left)
   xmap <C-l> <Plug>(textmanip-move-right)
+
+  map [5C <C-Right>
+  map [5D <C-Left>
 else
   " * vim on terminal
   xmap <Space>d <Plug>(textmanip-duplicate-down)
