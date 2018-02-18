@@ -1,0 +1,196 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_source = '''
+  let g:deoplete#enable_at_startup = 1
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_source = '''
+  imap <Tab> <Plug>(neosnippet_expand_or_jump)
+  smap <Tab> <Plug>(neosnippet_expand_or_jump)
+  xmap <Tab> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_source = '''
+let g:ale_echo_msg_error_str = nr2char(0xf421) . ' '
+let g:ale_echo_msg_warning_str = nr2char(0xf420) . ' '
+let g:ale_echo_msg_info_str = nr2char(0xf05a) . ' '
+let g:ale_echo_msg_format = '%severity%  %linter% - %s'
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = g:ale_echo_msg_error_str
+let g:ale_sign_warning = g:ale_echo_msg_warning_str
+let g:ale_statusline_format = [
+      \ g:ale_echo_msg_error_str . ' %d',
+      \ g:ale_echo_msg_warning_str . ' %d',
+      \ nr2char(0xf4a1) . '  ']
+'''
+on_i = 1
+
+# [[plugins]]
+# repo = 'nvie/vim-flake8'
+# on_ft = 'python'
+# hook_source = '''
+#   autocmd BufWritePost *.py call Flake8()
+#
+#   " autocmd FileType python map <buffer> <F3> :call Flake8()<CR> " キーバインド変更
+#   " let g:flake8_quickfix_location="topleft" " Quickfixの位置
+#   let g:flake8_quickfix_height=7 " Quickfixの高さ
+#   let g:flake8_show_in_gutter=1  " 左端にシンボルを表示
+#   let g:flake8_show_in_file=1  " ファイル内にマークを表示
+# '''
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+  " 入力モードで開始する
+  let g:unite_enable_start_insert=1
+  "let g:unite_enable_split_vertically = 1 "縦分割で開く
+  "let g:unite_winwidth = 40 "横幅40で開く
+
+  " 最近使用したファイル一覧
+  " nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+  " nnoremap <leader>z :<C-u>Unite file_mru<CR>
+  " cnoremap um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
+
+  " レジスタ一覧
+  " nnoremap <leader>re :<C-u>Unite -buffer-name=register register<CR>
+  " cnoremap ur :<C-u>Unite register -buffer-name=register<CR>
+
+  " バッファ一覧
+  " nnoremap <leader>b :<C-u>Unite buffer<CR>
+  " cnoremap ub :<C-u>Unite buffer -buffer-name=buffer<CR>
+
+  " ファイル一覧
+  " nnoremap <leader>f :<C-u>UniteWithBufferDir file file/new -buffer-name=file<CR>
+  " cnoremap ue :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+
+  "file current_dir
+  "noremap :ufc :<C-u>Unite file -buffer-name=file<CR>
+  "noremap :ufcr :<C-u>Unite file_rec -buffer-name=file_rec<CR>
+  "
+  ""file file_current_dir
+  "noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+  "noremap :uffr :<C-u>UniteWithBufferDir file_rec -buffer-name=file_rec<CR>
+
+  " .git以下の絞込
+  ""nnoremap <leader>ug :<C-u>Unite file_rec/async:!<CR>
+
+  " ESCキーを2回押すと終了する
+  ""au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+  ""au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+  "" unite-grep {{{
+  " unite-grepのバックエンドをagに切り替える
+  ""let g:unite_source_grep_command = 'ag'
+  ""let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+  ""let g:unite_source_grep_recursive_opt = ''
+  ""let g:unite_source_grep_max_candidates = 200
+
+  " unite-grepのキーマップ
+  " grep検索
+  ""nnoremap <leader>gr  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+  " カーソル位置の単語をgrep検索
+  ""nnoremap <leader>grw :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+  " grep検索結果の再呼出
+  ""nnoremap <leader>grr  :<C-u>UniteResume search-buffer<CR>
+  " }}}
+'''
+
+[[plugins]]
+repo = 'ujihisa/unite-rake'
+depends = ['unite']
+
+[[plugins]]
+repo = 'sakuma/unite-rails'
+depends = ['unite']
+hook_source = '''
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  " autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+
+  " 重い時対策
+  " let g:ruby_path = ""
+  "
+  " let g:ruby_fold = 1
+
+  set foldenable
+  set foldmethod=manual
+
+  autocmd InsertEnter * if !exists('w:last_fdm')
+              \| let w:last_fdm=&foldmethod
+              \| setlocal foldmethod=manual
+              \| endif
+  autocmd InsertLeave,WinLeave * if exists('w:last_fdm')
+              \| let &l:foldmethod=w:last_fdm
+              \| unlet w:last_fdm
+              \| endif
+
+  " rails.vim
+  let g:rails_level=4
+  let g:rails_default_file="app/controllers/application.rb"
+  " let g:rails_default_database="mysql"
+  autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
+  autocmd FileType ruby
+        \ if expand('%') =~# '_test\.rb$' |
+        \   compiler rubyunit | setl makeprg=testrb\ \"%:p\" |
+        \ elseif expand('%') =~# '_spec\.rb$' |
+        \   compiler rspec | setl makeprg=rspec\ \"%:p\" |
+        \ else |
+        \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
+        \ endif
+  autocmd User Bundler
+        \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif"
+
+
+  "<C-Space>でomni補完
+  imap <C-Space> <C-x><C-o>
+
+  " Rubyのオムニ補完を設定(ft-ruby-omni)
+  let g:rubycomplete_buffer_loading = 1
+  let g:rubycomplete_classes_in_global = 1
+  let g:rubycomplete_rails = 1
+
+  " rubycomplete.vim
+  " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+  "" unite-rails
+  noremap <Leader>rr :<C-u>Unite rails/root<CR>
+  noremap <Leader>ra :<C-u>Unite rails/app<CR>
+  noremap <Leader>rc :<C-u>Unite rails/controller<CR>
+  noremap <Leader>rf :<C-u>Unite rails/config<CR>
+  noremap <Leader>rm :<C-u>Unite rails/model<CR>
+  noremap <Leader>rv :<C-u>Unite rails/view<CR>
+  noremap <Leader>rj :<C-u>Unite rails/javascript<CR>
+  noremap <Leader>rst :<C-u>Unite rails/stylesheet<CR>
+  noremap <Leader>rl :<C-u>Unite rails/lib<CR>
+  noremap <Leader>rh :<C-u>Unite rails/helper<CR>
+  noremap <Leader>rs :<C-u>Unite rails/spec<CR>
+  noremap <Leader>rd :<C-u>Unite rails/db<CR>
+'''
+
+[[plugins]]
+repo = 'nsf/gocode'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+depends = ['deoplete.nvim', 'gocode']
+
