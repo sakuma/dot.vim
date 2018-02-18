@@ -1,0 +1,360 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+# TODO: 設定
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'alpaca-tc/vim-unite-giti'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+hook_source = '''
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+
+  " Enable snipMate compatibility feature.
+  let g:neosnippet#enable_snipmate_compatibility = 1
+
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory='~/.vim/snippets'
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'vim-scripts/Gundo'
+hook_source = '''
+  nnoremap <F5> :GundoToggle<CR>
+'''
+
+[[plugins]]
+repo = 'godlygeek/tabular'
+hook_source = '''
+  if exists(":Tabularize")
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a> :Tabularize /=><CR>
+    vmap <Leader>a> :Tabularize /=><CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
+  endif
+'''
+
+[[plugins]]
+repo = 'vim-scripts/ruby-matchit'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+[[plugins]]
+repo = 'tpope/vim-bundler'
+
+[[plugins]]
+repo = 'tpope/vim-rake'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_source = '''
+  let g:go_snippet_engine = "neosnippet"  "default ultisnips
+  " autocmd FileType go autocmd BufWritePre <buffer> GoImports
+  " au FileType go nmap <leader>r <Plug>(go-run)
+  " au FileType go nmap <leader>gb <Plug>(go-build)
+  " au FileType go nmap <leader>gt <Plug>(go-test)
+  " au FileType go nmap <leader>gc <Plug>(go-coverage)
+  " au FileType go nmap <Leader>gd <Plug>(go-doc)
+  " au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+  " au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+  " au FileType go nmap <Leader>gs <Plug>(go-implements)
+  " au FileType go nmap <Leader>rn <Plug>(go-rename)
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_interfaces = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_types = 1
+  let g:go_fmt_command = "goimports"
+  let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+  let g:go_metalinter_autosave = 1
+  let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+  set completeopt=menu,preview
+
+  " let g:syntastic_go_checkers = ['go', 'golint']
+  " let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['go'] }
+'''
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+hook_add = 'let g:terraform_fmt_on_save = 1'
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+[[plugins]]
+repo = 'mattreduce/vim-mix'
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_source = '''
+  " ホームポジションに近いキーを使う
+  let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+  " <Leader> + e + (w, k, ...)
+  let g:EasyMotion_leader_key="e"
+  " 1 ストローク選択を優先する
+  let g:EasyMotion_grouping=1
+  " カラー設定変更
+  hi EasyMotionTarget ctermbg=none ctermfg=red
+  hi EasyMotionShade  ctermbg=none ctermfg=blue
+'''
+
+[[plugins]]
+repo = 't9md/vim-textmanip'
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+[[plugins]]
+repo = 'nelstrom/vim-textobj-rubyblock'
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'gregsexton/gitv'
+[[plugins]]
+repo = 'cohama/agit.vim'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'int3/vim-extradite.git'
+[[plugins]]
+repo = 'mhinz/vim-signify'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_source = '''
+  nnoremap <F3> :NERDTreeToggle<CR>
+  let NERDTreeShowHidden = 1
+'''
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_source = '''
+  nnoremap <F4> :TagbarToggle<CR>
+  let g:tagbar_type_ruby = {
+      \ 'kinds' : [
+          \ 'm:modules',
+          \ 'c:classes',
+          \ 'd:describes',
+          \ 'C:contexts',
+          \ 'f:methods',
+          \ 'F:singleton methods'
+      \ ]
+      \ }
+'''
+
+[[plugins]]
+repo = 'tomasr/molokai'
+hook_source = '''
+  let g:molokai_original = 1
+  let g:rehash256 = 1
+'''
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_source = '''
+  let g:rustfmt_autosave = 1
+  set hidden
+'''
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+hook_source = '''
+  let g:racer_cmd = "~/.cargo/bin/racer"
+'''
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'vim-scripts/Colour-Sampler-Pack'
+[[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+# [[plugins]]
+# repo = 'delphinus/lightline-delphinus'
+# hook_source = '''
+# " g:lightline_delphinus_use_powerline_glyphs = 1
+# g:lightline_delphinus_use_nerd_fonts_glyphs = 1
+# '''
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_source = '''
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+'''
+
+[[plugins]]
+repo = 'vim-scripts/xmledit'
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+[[plugins]]
+repo = 'thinca/vim-poslist'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+hook_source = '''
+  let g:vim_markdown_folding_disabled = 1
+'''
+
+[[plugins]]
+repo = 'itspriddle/vim-marked'
+[[plugins]]
+repo = 'zaiste/tmux.vim'
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+[[plugins]]
+repo = 'thinca/vim-fontzoom'
+[[plugins]]
+repo = 'vim-scripts/MultipleSearch'
+[[plugins]]
+repo = 'vim-scripts/csv.vim'
+[[plugins]]
+repo = 'Shougo/vimshell.git'
+[[plugins]]
+repo = 'Shougo/vimfiler'
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+[[plugins]]
+repo = 'vim-scripts/grep.vim'
+[[plugins]]
+repo = 'fuenor/qfixhowm'
+[[plugins]]
+repo = 'fuenor/qfixgrep'
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
+[[plugins]]
+repo = 'rking/ag.vim'
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+[[plugins]]
+repo = 'vim-scripts/css_color.vim'
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+[[plugins]]
+repo = 'mattn/emmet-vim'
+[[plugins]]
+repo = 'othree/html5.vim'
+[[plugins]]
+repo = 'othree/html5-syntax.vim'
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+hook_source = '''
+  let g:vim_jsx_pretty_colorful_config = 1 " default 0
+'''
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+hook_source = '''
+  autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+  call dein#add('leafgarland/typescript-vim')
+  autocmd BufRead,BufNewFile *.ts set filetype=typescript
+'''
+
+[[plugins]]
+repo = 'tpope/vim-haml'
+[[plugins]]
+repo = 'slim-template/vim-slim'
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'tell-k/vim-browsereload-mac'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_source = '''
+  let g:indent_guides_enable_on_vim_startup=1
+  let g:indent_guides_guide_size=1
+'''
+
+[[plugins]]
+repo = 'vim-scripts/AnsiEsc.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+hook_source = '''
+  let g:over_command_line_prompt = "Over Command> "
+  " カーソル下の単語をハイライト付きで置換
+  nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+  nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+  let g:netrw_nogx = 1
+  nmap gx <Plug>(openbrowser-smart-search)
+  vmap gx <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'kana/vim-smartinput'
+[[plugins]]
+repo = 'AndrewRadev/switch.vim'
+[[plugins]]
+repo = 'gmarik/sudo-gui.vim'

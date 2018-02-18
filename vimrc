@@ -6,6 +6,9 @@
 " 背景黒向け
 syntax on
 
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/Users/sakuma/.pyenv/versions/neovim3/bin/python'
+
 set cursorline " カーソルラインの強調表示を有効化
 " highlight Normal ctermbg=black ctermfg=grey
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
@@ -101,6 +104,8 @@ set mouse=a " マウス機能有効化
 " block : only visual mode
 set virtualedit=all
 
+set belloff=all
+
 " 検索結果ハイライトを ESCキーの連打でリセットする
 :nnoremap <ESC><ESC> :nohlsearch<CR>
 
@@ -139,7 +144,8 @@ if has('gui_macvim')
     set imdisable " IMを無効化
     set transparency=2 " 透明度を指定
     set antialias
-    set guifont=RictyDiscord-Regular:h16
+    set guifont=KnackNerdFontC-Regular:h12
+    " set guifont=RictyDiscord-Regular:h16
     " set guifontwide=RictyDiscord-Regular:h16
     " set guifont=Monaco:h14
     " set guifont=Ricty:h18
@@ -156,11 +162,55 @@ endif
 " 読まれたく無いファイルには下記の設定を記述
 "let plugin_cmdex_disable = 1
 
-" vundle
-":source ~/.vim/config/bundles.vim
-" neobundle
-" source ~/.vim/config/neobundles.vim
-source ~/.vim/config/dein.vim
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+let s:dein_dir = expand('~/.config/dein')
+
+" dein.vimの実体があるディレクトリをセット
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" dein.vimが存在していない場合はgithubからclone
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(expand('~/.vim/dein'))
+
+  let s:toml_dir = expand('~/.vim/config')
+  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+
+  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
+  :source $VIMRUNTIME/macros/matchit.vim
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+
+if dein#check_install()
+ call dein#install()
+endif
+
+for f in split(glob('~/.vim/config/neobundle/*.vim'), '\n')
+  exe 'source' f
+endfor
+
+" source ~/.vim/config/unite.vim
 
 " calendar
 source ~/.vim/config/qfixhown-config.vim

@@ -5,11 +5,12 @@ let g:lightline = {
         \   'left': [
         \     ['mode', 'paste'],
         \     ['fugitive', 'filename'],
+        \     ['ale']
         \   ],
         \   'right': [
-        \     ['syntastic', 'lineinfo'],
         \     ['percent'],
         \     ['fileformat', 'fileencoding', 'filetype'],
+        \     []
         \   ]
         \ },
         \ 'component_function': {
@@ -22,13 +23,12 @@ let g:lightline = {
         \   'fileencoding': 'MyFileencoding',
         \   'mode': 'MyMode',
         \   'charcode': 'MyCharCode',
+        \   'ale': 'ALEGetStatusLine'
         \ },
         \ 'component_expand': {
-        \   'syntastic': 'SyntasticStatuslineFlag'
         \ },
         \ 'component_type': {
-        \   'syntastic': 'error'
-        \ }, 
+        \ },
         \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
         \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
         \ }
@@ -66,12 +66,19 @@ function! MyFugitive()
   return ''
 endfunction
 
+" function! MyFileformat()
+"   return winwidth('.') > 70 ? &fileformat : ''
+" endfunction
 function! MyFileformat()
-  return winwidth('.') > 70 ? &fileformat : ''
-endfunction
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction"
 
+
+" function! MyFiletype()
+"   return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+" endfunction
 function! MyFiletype()
-  return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
 function! MyFileencoding()
@@ -118,12 +125,12 @@ function! MyCharCode()
   return "'". char ."' ". nr
 endfunction
 
-let g:syntastic_mode_map = { 'mode': 'passive' }
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost * call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-endfunction
+" let g:syntastic_mode_map = { 'mode': 'passive' }
+" augroup AutoSyntastic
+"   autocmd!
+"   autocmd BufWritePost * call s:syntastic()
+" augroup END
+" function! s:syntastic()
+"   SyntasticCheck
+"   call lightline#update()
+" endfunction
