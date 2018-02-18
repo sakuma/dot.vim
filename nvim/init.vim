@@ -224,4 +224,4 @@ colorscheme Tomorrow-Night
 source ~/.vim/nvim/conf/gitconfig.vim
 source ~/.vim/nvim/conf/lightline.vim
 source ~/.vim/nvim/conf/switch.vim
-source ~/.vim/config/ruby.vim
+" source ~/.vim/config/ruby.vim
