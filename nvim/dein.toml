@@ -5,11 +5,13 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/denite.nvim'
 depends = ['neomru.vim']
 hook_add = '''
-  nmap <silent> <leader>l :<C-u>Denite line<CR>
-  nmap <silent> <leader>g :<C-u>Denite grep<CR>
-  nmap <silent> <leader>b :<C-u>Denite buffer<CR>
-  nmap <silent> <leader>] :<C-u>DeniteCursorWord grep<CR>
-  nmap <silent> <leader>z :<C-u>Denite file_mru<CR>
+  nmap <silent> <leader>f :<C-u>DeniteBufferDir -cursor-wrap=true file file:new<CR>
+  nmap <silent> <leader>l :<C-u>Denite line -cursor-wrap=true<CR>
+
+  nmap <silent> <leader>g :<C-u>Denite grep -cursor-wrap=true<CR>
+  nmap <silent> <leader>b :<C-u>Denite buffer -cursor-wrap=true<CR>
+  nmap <silent> <leader>] :<C-u>DeniteCursorWord grep -cursor-wrap=true<CR>
+  nmap <silent> <leader>z :<C-u>Denite file_mru -cursor-wrap=true<CR>
   ""nmap <silent> <C-u><C-t> :<C-u>Denite filetype<CR>
   ""nmap <silent> <C-u><C-p> :<C-u>Denite file_rec<CR>
   ""nmap <silent> <C-u><C-]> :<C-u>DeniteCursorWord grep<CR>
