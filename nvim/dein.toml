@@ -378,6 +378,12 @@ hook_source = '''
   call dein#add('leafgarland/typescript-vim')
   autocmd BufRead,BufNewFile *.ts set filetype=typescript
 '''
+[[plugins]]
+repo = 'posva/vim-vue'
+hook_source = '''
+ autocmd FileType vue syntax sync fromstart
+ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+'''
 
 [[plugins]]
 repo = 'tpope/vim-haml'
