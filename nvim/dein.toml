@@ -1,4 +1,5 @@
 [[plugins]]
+
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -32,7 +33,7 @@ hook_post_source = '''
 '''
 
 [[plugins]]
-repo = '5t111111/denite-rails'
+repo = 'sakuma/denite-rails'
 hook_add = '''
   nnoremap [rails] <Nop>
   nmap     <Leader>r [rails]
@@ -42,8 +43,13 @@ hook_add = '''
   nnoremap <silent> [rails]c :<C-u>Denite<Space>rails:controller<Return>
   nnoremap <silent> [rails]v :<C-u>Denite<Space>rails:view<Return>
   nnoremap <silent> [rails]h :<C-u>Denite<Space>rails:helper<Return>
-  nnoremap <silent> [rails]r :<C-u>Denite<Space>rails:test<Return>
+  nnoremap <silent> [rails]t :<C-u>Denite<Space>rails:test<Return>
   nnoremap <silent> [rails]s :<C-u>Denite<Space>rails:spec<Return>
+  nnoremap <silent> [rails]f :<C-u>Denite<Space>rails:config<Return>
+  nnoremap <silent> [rails]d :<C-u>Denite<Space>rails:db<Return>
+  nnoremap <silent> [rails]l :<C-u>Denite<Space>rails:lib<Return>
+  nnoremap <silent> [rails]e :<C-u>Denite<Space>rails:assets<Return>
+  nnoremap <silent> [rails]a :<C-u>Denite<Space>rails:app<Return>
 '''
 
 
@@ -59,8 +65,13 @@ repo = 'alpaca-tc/vim-unite-giti'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
+# For Python
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
+
+# For Python
+[[plugins]]
+repo = 'tweekmonster/django-plus.vim'
 
 [[plugins]]
 repo = 'honza/vim-snippets'
