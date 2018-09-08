@@ -33,7 +33,8 @@ set backupdir=$HOME/.vim/backup "バックアップファイルを作るディ�
 set browsedir=buffer
 
 "クリップボードを連携
-set clipboard=unnamed
+" set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 set noswapfile
 " set directory=$HOME/.vim/swaps " スワップファイル用のディレクトリ
@@ -46,6 +47,7 @@ set incsearch "インクリメンタルサーチを行う
 set list
 " タブ文字、行末など不可視文字を表示する
 set listchars=tab:»-,extends:»,precedes:«,nbsp:%,trail:-,eol:↲
+set textwidth=0
 
 set showmatch "閉じ括弧が入力されたとき、対応する括弧を表示する
 set smartcase "検索時に大文字を含んでいたら大/小を区別
